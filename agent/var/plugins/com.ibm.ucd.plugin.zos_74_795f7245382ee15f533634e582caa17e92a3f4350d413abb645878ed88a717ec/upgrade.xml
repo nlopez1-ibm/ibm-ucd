@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin-upgrade xmlns="http://www.urbancode.com/UpgradeXMLSchema_v1">
+    <!--
+    - Licensed Materials - Property of IBM* and/or HCL**
+    - UrbanCode Deploy
+    - UrbanCode Build
+    - UrbanCode Release
+    - AnthillPro
+    - (c) Copyright IBM Corporation 2011, 2017. All Rights Reserved.
+    - (c) Copyright HCL Technologies Ltd. 2022. All Rights Reserved.
+    -
+    - U.S. Government Users Restricted Rights - Use, duplication or disclosure restricted by
+    - GSA ADP Schedule Contract with IBM Corp.
+    -
+    - * Trademark of International Business Machines
+    - ** Trademark of HCL Technologies Limited
+    -->
+
+    <!-- The purpose of plugin.xml is to provide upgrade paths when the plugin version is changed.
+         If the upgrade paths are specified correctly, users will be upgraded to the new version
+         without interruption. -->
+    <migrate to-version="2">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+    </migrate>
+    <migrate to-version="3">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+    </migrate>
+
+    <migrate to-version="4">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets">
+            <migrate-properties>
+                <migrate-property name="deployBasePath" default="${BUZ_DEPLOY_BASE}"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Rollback Data Sets">
+            <migrate-properties>
+                <migrate-property name="deployBasePath" default="${BUZ_DEPLOY_BASE}"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Run TSO or ISPF Command">
+            <migrate-properties>
+                <migrate-property name="deployBasePath" default="${BUZ_DEPLOY_BASE}"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions">
+            <migrate-properties>
+                <migrate-property name="deployBasePath" default="${BUZ_DEPLOY_BASE}"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Remove All Versions">
+            <migrate-properties>
+                <migrate-property name="deployBasePath" default="${BUZ_DEPLOY_BASE}"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Replace Tokens MVS"/>
+    </migrate>
+    <migrate to-version="5">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+    </migrate>
+    <migrate to-version="6">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts">
+            <migrate-properties>
+                <migrate-property name="password"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command">
+            <migrate-properties>
+                <migrate-property name="deployTypeName" old="deployType"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+    </migrate>
+
+    <migrate to-version="7">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command">
+            <migrate-properties>
+                <migrate-property name="stopOnFail" default="true"/>
+                <migrate-property name="tsoCommand"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS">
+            <migrate-properties>
+                <migrate-property name="isWildCardAllowed" default="false"/>
+                <migrate-property name="excludes"/>
+                <migrate-property name="includes"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Generate Artifact Information">
+            <migrate-properties>
+                <migrate-property name="srcDatasetName" default=""/>
+                <migrate-property name="datasetName" default=""/>
+            </migrate-properties>
+        </migrate-command>
+    </migrate>
+    <migrate to-version="8">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information"/>
+    </migrate>
+    <migrate to-version="9">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information"/>
+    </migrate>
+
+    <migrate to-version="10">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets">
+            <migrate-properties>
+                <migrate-property name="allowCreateDataset" default="TRUE"/>
+                <migrate-property name="pdsMapping" default="${p?:deploy.env.pds.mapping}"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information"/>
+    </migrate>
+
+    <migrate to-version="11">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information"/>
+    </migrate>
+
+    <migrate to-version="13">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information"/>
+    </migrate>
+
+    <migrate to-version="14">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information"/>
+    </migrate>
+    <migrate to-version="15">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information">
+            <migrate-properties>
+                <migrate-property name="failOnEmpty" default="false"/>
+            </migrate-properties>
+        </migrate-command>
+    </migrate>
+    <migrate to-version="16">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job">
+            <migrate-properties>
+                <migrate-property name="jobCard" default="${p?:deploy.env.jobstatement}"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information"/>
+    </migrate>
+    <migrate to-version="17">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job">
+            <migrate-properties>
+                <migrate-property name="irrracfLibraryPath" default="/usr/lib"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Wait For Job">
+            <migrate-properties>
+                <migrate-property name="irrracfLibraryPath" default="/usr/lib"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information"/>
+    </migrate>
+    <migrate to-version="18">
+        <migrate-command name="Copy Artifacts">
+            <migrate-properties>
+                <migrate-property name="resourceId" default="${p:resource.id}"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="FTP Artifacts">
+            <migrate-properties>
+                <migrate-property name="resourceId" default="${p:resource.id}"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Deploy Data Sets">
+            <migrate-properties>
+                <migrate-property name="resourceId" default="${p:resource.id}"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Rollback Data Sets">
+            <migrate-properties>
+                <migrate-property name="resourceId" default="${p:resource.id}"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions">
+            <migrate-properties>
+                <migrate-property name="resourceId" default="${p:resource.id}"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Remove All Versions">
+            <migrate-properties>
+                <migrate-property name="resourceId" default="${p:resource.id}"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information">
+            <migrate-properties>
+                <migrate-property name="resourceId" default="${p:resource.id}"/>
+            </migrate-properties>
+        </migrate-command>
+    </migrate>
+    <migrate to-version="19">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets">
+            <migrate-properties>
+                <migrate-property name="componentId" default="${p:component.id}"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information"/>
+    </migrate>
+    <migrate to-version="20">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts">
+            <migrate-properties>
+                <migrate-property name="password" default="p?:ucd.repository.password"/>
+                <migrate-property name="usePassticket" default="true"/>
+                <migrate-property name="applID" default="FTPAPPL"/>
+                <migrate-property name="irrracfJarFile" default="/usr/include/java_classes/IRRRacf.jar"/>
+                <migrate-property name="irrracfLibraryPath" default="/usr/lib"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information"/>
+    </migrate>
+    <migrate to-version="21">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information">
+            <migrate-properties>
+                <migrate-property name="loopType"/>
+            </migrate-properties>
+        </migrate-command>
+    </migrate>
+    <migrate to-version="22">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information"/>
+    </migrate>
+    <migrate to-version="23">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information"/>
+    </migrate>
+    <migrate to-version="24">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information"/>
+    </migrate>
+    <migrate to-version="25">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information"/>
+    </migrate>
+    <migrate to-version="26">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information"/>
+    </migrate>
+    <migrate to-version="27">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information"/>
+    </migrate>
+    <migrate to-version="28">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information"/>
+    </migrate>
+    <migrate to-version="29">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information"/>
+    </migrate>
+    <migrate to-version="30">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information"/>
+    </migrate>
+    <migrate to-version="31">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information"/>
+    </migrate>
+    <migrate to-version="32">
+    </migrate>
+    <migrate to-version="36">
+    </migrate>
+    <migrate to-version="38">
+    </migrate>
+    <migrate to-version="39">
+    </migrate>
+    <migrate to-version="41">
+        <migrate-command name="Deploy Data Sets"/>
+    </migrate>
+    <migrate to-version="42">
+        <migrate-command name="Deploy Data Sets"/>
+    </migrate>
+    <migrate to-version="44">
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+    </migrate>
+    <migrate to-version="45">
+    </migrate>
+    <migrate to-version="46">
+    </migrate>
+    <migrate to-version="47">
+    </migrate>
+    <migrate to-version="48">
+        <migrate-command name="Deploy Data Sets">
+            <migrate-properties>
+                <migrate-property name="deleteCurrentContents" default="false"/>
+            </migrate-properties>
+        </migrate-command>
+    </migrate>
+    <migrate to-version="49">
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Deploy Data Sets"/>
+    </migrate>
+    <migrate to-version="50">
+        <migrate-command name="Replace Tokens MVS"/>
+    </migrate>
+    <migrate to-version="51">
+        <migrate-command name="Generate Artifact Information"/>
+    </migrate>
+    <migrate to-version="52">
+        <migrate-command name="Generate Artifact Information">
+            <migrate-properties>
+                <migrate-property name="ignoreUnresolved" default="false"/>
+            </migrate-properties>
+        </migrate-command>
+    </migrate>
+    <migrate to-version="53">
+        <migrate-command name="Deploy Data Sets">
+            <migrate-properties>
+                <migrate-property name="containerFilter"/>
+            </migrate-properties>
+        </migrate-command>
+    </migrate>
+    <migrate to-version="54">
+        <migrate-command name="Submit Job">
+        </migrate-command>
+        <migrate-command name="Wait For Job">
+        </migrate-command>
+    </migrate>
+    <migrate to-version="55">
+        <migrate-command name="Deploy Data Sets">
+            <migrate-properties>
+                <migrate-property name="binderPath" default="/usr/lib"/>
+                <migrate-property name="printLogs" default="false"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Rollback Data Sets">
+            <migrate-properties>
+                <migrate-property name="printLogs" default="false"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Submit Job">
+            <migrate-properties>
+                <migrate-property name="outputPagination" default="false"/>
+            </migrate-properties>
+        </migrate-command>
+    </migrate>
+    <migrate to-version="56">
+        <migrate-command name="Deploy Data Sets">
+            <migrate-properties>
+                <migrate-property name="printLogs" default="false"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Rollback Data Sets">
+            <migrate-properties>
+                <migrate-property name="printLogs" default="false"/>
+            </migrate-properties>
+        </migrate-command>
+    </migrate>
+    <migrate to-version="57">
+        <migrate-command name="Submit Job">
+            <migrate-properties>
+                <migrate-property name="useRunId" default="FALSE"/>
+            </migrate-properties>
+        </migrate-command>
+    </migrate>
+    <migrate to-version="58">
+        <migrate-command name="Wait For Job">
+            <migrate-properties>
+                <migrate-property name="useRunId" default="FALSE"/>
+            </migrate-properties>
+        </migrate-command>
+    </migrate>
+    <migrate to-version="59">
+        <migrate-command name="Rollback Data Sets">
+            <migrate-properties>
+                <migrate-property name="preventRiskyRollback" default="true"/>
+            </migrate-properties>
+        </migrate-command>
+    </migrate>
+    <migrate to-version="60">
+        <migrate-command name="Deploy Data Sets">
+        </migrate-command>
+        <migrate-command name="Rollback Data Sets">
+        </migrate-command>
+    </migrate>
+    <migrate to-version="61">
+        <migrate-command name="Allocate Data Set">
+        </migrate-command>
+        <migrate-command name="Allocate SMS Managed Data Set">
+        </migrate-command>
+        <migrate-command name="Allocate Data Set From Existing">
+        </migrate-command>
+    </migrate>
+    <migrate to-version="62">
+        <migrate-command name="Allocate Data Set">
+            <migrate-properties>
+                <migrate-property name="deleteDataset" default="false"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Allocate SMS Managed Data Set">
+            <migrate-properties>
+                <migrate-property name="deleteDataset" default="false"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Allocate Data Set From Existing">
+            <migrate-properties>
+                <migrate-property name="deleteDataset" default="false"/>
+            </migrate-properties>
+        </migrate-command>
+    </migrate>
+    <migrate to-version="63">
+        <migrate-command name="Submit Job">
+            <migrate-properties>
+                <migrate-property name="timeout" default="120"/>
+                <migrate-property name="cutOff" default="10000"/>
+            </migrate-properties>
+        </migrate-command>
+        <migrate-command name="Wait For Job">
+            <migrate-properties>
+                <migrate-property name="timeout" default="120"/>
+                <migrate-property name="cutOff" default="10000"/>
+            </migrate-properties>
+        </migrate-command>
+    </migrate>
+    <migrate to-version="64">
+    </migrate>
+    <migrate to-version="65">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="Copy Data Set"/>
+    </migrate>
+    <migrate to-version="66">
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions">
+            <migrate-properties>
+                <migrate-property name="isDryRun" default="false"/>
+            </migrate-properties>
+        </migrate-command>
+    </migrate>
+    <migrate to-version="67">
+        <migrate-command name="Copy Artifacts"/>
+        <migrate-command name="FTP Artifacts"/>
+        <migrate-command name="Deploy Data Sets"/>
+        <migrate-command name="Rollback Data Sets"/>
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="Allocate Data Set"/>
+        <migrate-command name="Allocate SMS Managed Data Set"/>
+        <migrate-command name="Copy Data Set"/>
+        <migrate-command name="Allocate Data Set From Existing"/>
+        <migrate-command name="Submit Job"/>
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Remove Redundant Versions"/>
+        <migrate-command name="Remove All Versions"/>
+        <migrate-command name="Replace Tokens MVS"/>
+        <migrate-command name="Generate Artifact Information"/>
+        <migrate-command name="Run MVS Command"/>
+    </migrate>
+    <migrate to-version="68"/>
+    <migrate to-version="69">
+        <migrate-command name="Delete Dataset"/>
+    </migrate>
+    <migrate to-version="70">
+        <migrate-command name="Wait For Job"/>
+        <migrate-command name="Run MVS Command"/>
+    </migrate>
+    <migrate to-version="71">
+        <migrate-command name="Run TSO or ISPF Command"/>
+        <migrate-command name="FTP Artifacts"/>
+    </migrate>
+    <migrate to-version="72">
+        <migrate-command name="Delete Dataset"/>
+    </migrate>
+    <migrate to-version="73">
+        <migrate-command name="Submit Job"/>
+    </migrate>
+    <migrate to-version="74">
+        <migrate-command name="Cleanup Backup Files"/>
+    </migrate>
+</plugin-upgrade>

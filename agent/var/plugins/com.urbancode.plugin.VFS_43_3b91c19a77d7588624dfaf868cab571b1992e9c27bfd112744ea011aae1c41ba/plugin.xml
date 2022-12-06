@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+- Licensed Materials - Property of IBM* and/or HCL**
+- UrbanCode Deploy
+- UrbanCode Build
+- UrbanCode Release
+- AnthillPro
+- (c) Copyright IBM Corporation 2011, 2017. All Rights Reserved.
+- (c) Copyright HCL Technologies Ltd. 2021. All Rights Reserved.
+-
+- U.S. Government Users Restricted Rights - Use, duplication or disclosure restricted by
+- GSA ADP Schedule Contract with IBM Corp.
+-
+- * Trademark of International Business Machines
+- ** Trademark of HCL Technologies Limited
+-->
+<plugin xmlns="http://www.urbancode.com/PluginXMLSchema_v1"
+        xmlns:server="http://www.urbancode.com/PluginServerXMLSchema_v1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <header>
+    <identifier id="com.urbancode.plugin.VFS" version="43" name="UrbanCode Deploy Versioned File Storage"/>
+    <description>A plugin to allow UrbanCode Deploy to upload artifacts to CodeStation.</description>
+    <tag>Repositories/Artifact/UrbanCode Deploy</tag>
+    <server:required-server-version>6.1.0.0</server:required-server-version>
+  </header>
+
+  <step-type name="Upload Artifacts">
+    <description>Upload artifacts to a VFS server.</description>
+
+    <properties>
+      <property name="directoryOffset" required="true">
+        <property-ui type="textBox" description="The working directory to use when executing this command. This is relative to current working directory." label="Directory Offset" default-value="."/>
+      </property>
+
+      <property name="fileIncludePatterns" required="true">
+        <property-ui type="textAreaBox" label="Includes" description="The patterns to match files to upload. The wildcard ** indicates every directory and the wildcard * indicates every file. So the pattern dist/**/* would retrieve the entire file tree underneath the dist directory." default-value="**/*"/>
+      </property>
+
+      <property name="fileExcludePatterns">
+        <property-ui type="textAreaBox" label="Excludes" description="The patterns to exclude files to upload."/>
+      </property>
+
+      <property name="saveFileExecuteBits" required="false">
+        <property-ui type="checkBox" label="Save File Execute Bits" description="When enabled, file execute bits are saved with the files." default-value="false"/>
+      </property>
+
+      <property name="extensions">
+        <property-ui type="textBox" label="Text File Extensions" description="A comma separated list of extensions of files need to be converted to a new character set on download (e.g. txt,properties,log). This should be used in cases where the OS the files are being deployed to requires a different character set than the one uploading the files into the server."/>
+      </property>
+
+
+      <!-- hidden -->
+      <property name="versionId" required="true">
+        <property-ui type="textBox" hidden="true" default-value="${p:version.id}"/>
+      </property>
+
+      <property name="serverUrl">
+        <property-ui type="textBox" hidden="true" default-value="${p:server.url}"/>
+      </property>
+
+      <property name="maxMemory">
+        <property-ui type="textBox" hidden="true" default-value="1G"/>
+      </property>
+    </properties>
+
+    <post-processing>
+      <![CDATA[
+        if (properties.get("exitCode") != 0) {
+            properties.put("Status", "Failure");
+        }
+        else {
+            properties.put("Status", "Success");
+        }
+     ]]>
+    </post-processing>
+
+    <command program="${PLUGIN_HOME}/javawrapper.sh">
+      <arg value="-Xmx${p:maxMemory}"/>
+      <arg value="-cp"/>
+      <arg file="lib/UrbancodeVFS.jar"/>
+      <arg value="com.urbancode.plugins.ucd.vfs.UploadCommand"/>
+      <arg file="${PLUGIN_INPUT_PROPS}"/>
+      <arg file="${PLUGIN_OUTPUT_PROPS}"/>
+    </command>
+  </step-type>
+
+  <step-type name="Download Artifacts">
+    <description>Download artifacts from a VFS server.</description>
+
+    <properties>
+      <property name="directoryOffset" required="true">
+        <property-ui type="textBox" description="The working directory to use when executing this command. This is relative to current working directory." label="Directory Offset" default-value="."/>
+      </property>
+
+      <property name="artifactSetBaseDir" required="false">
+        <property-ui type="textBox" label="Artifact Directory Offset" description="The base directory from which artifacts will be retrieved from the Component Version. For example, using App/Dist will only get all files from in the App/Dist directory and put them in the Current Working Directory. All includes/excludes will be evaluated relative to this offset."/>
+      </property>
+
+      <property name="fileIncludePatterns" required="true">
+        <property-ui type="textAreaBox" label="Includes" description="The patterns to match files to upload. The wildcard ** indicates every directory and the wildcard * indicates every file. So the pattern dist/**/* would retrieve the entire file tree underneath the dist directory." default-value="**/*"/>
+      </property>
+
+      <property name="fileExcludePatterns">
+        <property-ui type="textAreaBox" label="Excludes" description="The patterns to exclude files to upload."/>
+      </property>
+
+      <property name="syncMode">
+        <property-ui type="selectBox" label="Sync Mode" default-value="true" description="Sync transfers only changed files, removing files that exist only in the previously deployed version. Clean removes all files not contained in the currently deployed version"/>
+        <value label="none" >false</value>
+        <value label="Sync">true</value>
+        <value label="Sync and Clean">FULL</value>
+      </property>
+
+      <property name="handleIncrementalVersions">
+        <property-ui type="checkBox" label="Handle Incremental Versions" description="(Valid only with Sync Mode enabled) When selected, incremental version handling is enabled. When not selected, the legacy behavior is enabled, which is to handle incremental versions as though they are full versions. Enabling incremental version handling has two effects. First, when deploying a full version, all versions back to the most recently deployed full version are considered when determining which files to update or remove; the legacy behavior will only consider the the single most recently deployed version. Second, deploying an incremental version will not remove files from all currently deployed versions and will restore missing files from those versions; the legacy behavior will remove files from the single most recent currently deployed version and ignore files from other currently deployed versions. For server versions before 7.1.1.0, there is a negative performance impact to enabling this feature due to API availablity. The impact is the greatest for versions 6.2.7.0 through 7.1.0. Until 7.1.1.0, is not recommended to enable this feature unless you use incremental versions." default-value="false"/>
+      </property>
+
+      <property name="fullVerification">
+        <property-ui type="checkBox" label="Full Verification" description="(Valid only with Sync Mode enabled) When selected, hashes will be computed on each file in the destination artifact set to determine whether network transfer is necessary. Otherwise, files will be compared by date modified and size." default-value="true"/>
+      </property>
+
+      <property name="setFileExecuteBits" required="false">
+        <property-ui type="checkBox" label="Set File Execute Bits" description="When enabled, sets file execute bits on the files which have them set in the repository." default-value="false"/>
+      </property>
+
+      <property name="verifyFileIntegrity" required="false">
+        <property-ui type="checkBox" label="Verify File Integrity" description="When enabled, verifies downloaded files match their hash. Enabling this may reduce performance." default-value="false"/>
+      </property>
+
+      <property name="charset">
+        <property-ui type="textBox" label="Charset" description="The Character set that files whose metadata includes a character set should be converted to upon download (e.g. UTF-8). If this field is left blank then the system's default charset will be used."/>
+      </property>
+
+
+      <!-- hidden -->
+
+      <property name="versionId">
+        <property-ui type="textBox" hidden="true" default-value="${p:version.id}"/>
+      </property>
+
+      <property name="versionType">
+        <property-ui type="textBox" hidden="true" default-value="${p:version.type}"/>
+      </property>
+
+      <property name="serverUrl">
+        <property-ui type="textBox" hidden="true" default-value="${p:server.url}"/>
+      </property>
+
+      <property name="compId">
+        <property-ui type="textBox" hidden="true" default-value="${p:component.id}"/>
+      </property>
+
+      <property name="resId">
+        <property-ui type="textBox" hidden="true" default-value="${p:resource.id}"/>
+      </property>
+
+      <property name="envId">
+        <property-ui type="textBox" hidden="true" default-value="${p:environment.id}"/>
+      </property>
+
+      <property name="maxMemory">
+        <property-ui type="textBox" hidden="true" default-value="1G"/>
+      </property>
+
+
+      <!-- support component/label version references available in older plugin versions -->
+
+      <property name="label">
+        <property-ui type="textBox" hidden="true" label="Version Name" default-value=""/>
+      </property>
+    </properties>
+
+    <post-processing>
+      <![CDATA[
+        if (properties.get("exitCode") != 0) {
+            properties.put("Status", "Failure");
+        }
+        else {
+            properties.put("Status", "Success");
+        }
+     ]]>
+    </post-processing>
+
+    <command program="${PLUGIN_HOME}/javawrapper.sh">
+      <arg value="-Xmx${p:maxMemory}"/>
+      <arg value="-cp"/>
+      <arg file="lib/UrbancodeVFS.jar"/>
+      <arg value="com.urbancode.plugins.ucd.vfs.DownloadByLabelCommand"/>
+      <arg file="${PLUGIN_INPUT_PROPS}"/>
+      <arg file="${PLUGIN_OUTPUT_PROPS}"/>
+    </command>
+  </step-type>
+
+
+  <step-type name="Verify Local Artifacts">
+    <description>Compare artifacts on local machine with inventory.</description>
+
+    <properties>
+      <property name="directoryOffset" required="true">
+        <property-ui type="textBox" description="The working directory to use when executing this command. This is relative to current working directory." label="Directory Offset" default-value="."/>
+      </property>
+
+      <property name="fileIncludePatterns" required="true">
+        <property-ui type="textAreaBox" label="Includes" description="The patterns to match files to upload. The wildcard ** indicates every directory and the wildcard * indicates every file. So the pattern dist/**/* would retrieve the entire file tree underneath the dist directory." default-value="**/*"/>
+      </property>
+
+      <property name="fileExcludePatterns">
+        <property-ui type="textAreaBox" label="Excludes" description="The patterns to exclude files to upload."/>
+      </property>
+
+
+      <!-- hidden -->
+      <property name="serverUrl">
+        <property-ui type="textBox" hidden="true" default-value="${p:server.url}"/>
+      </property>
+
+      <property name="versionId" required="true">
+        <property-ui type="textBox" hidden="true" default-value="${p:version.id}"/>
+      </property>
+
+      <property name="maxMemory">
+        <property-ui type="textBox" hidden="true" default-value="1G"/>
+      </property>
+    </properties>
+
+    <post-processing>
+      <![CDATA[
+        if (properties.get("exitCode") != 0) {
+            properties.put("Status", "Failure");
+        }
+        else {
+            properties.put("Status", "Success");
+        }
+     ]]>
+    </post-processing>
+
+    <command program="${PLUGIN_HOME}/javawrapper.sh">
+      <arg value="-Xmx${p:maxMemory}"/>
+      <arg value="-cp"/>
+      <arg file="lib/UrbancodeVFS.jar"/>
+      <arg value="com.urbancode.plugins.ucd.vfs.VerifyLocalArtifactsCommand"/>
+      <arg file="${PLUGIN_INPUT_PROPS}"/>
+      <arg file="${PLUGIN_OUTPUT_PROPS}"/>
+    </command>
+  </step-type>
+
+  <step-type name="Sync Artifacts">
+    <description>Compare local artifacts with the artifacts expected to be on the resource according to its inventory, and remediate any differences.</description>
+
+    <properties>
+      <property name="fileIncludePatterns" required="true">
+        <property-ui type="textAreaBox" label="Includes" description="The patterns to match files to upload. The wildcard ** indicates every directory and the wildcard * indicates every file. So the pattern dist/**/* would retrieve the entire file tree underneath the dist directory." default-value="**/*"/>
+      </property>
+
+      <property name="fileExcludePatterns">
+        <property-ui type="textAreaBox" label="Excludes" description="The patterns to exclude files to upload."/>
+      </property>
+
+      <property name="setFileExecuteBits" required="false">
+        <property-ui type="checkBox" label="Set File Execute Bits" description="When enabled, sets file execute bits on the files which have them set in the repository." default-value="false"/>
+      </property>
+
+      <property name="verifyFileIntegrity" required="false">
+        <property-ui type="checkBox" label="Verify File Integrity" description="When enabled, verifies downloaded files match their hash. Enabling this may reduce performance." default-value="false"/>
+      </property>
+
+      <property name="charset">
+        <property-ui type="textBox" label="Charset" description="The Character set that files whose metadata includes a character set should be converted to upon download (e.g. UTF-8). If this field is left blank then the system's default charset will be used."/>
+      </property>
+
+
+      <!-- hidden -->
+
+      <property name="serverUrl">
+        <property-ui type="textBox" hidden="true" default-value="${p:server.url}"/>
+      </property>
+
+      <property name="resId">
+        <property-ui type="textBox" hidden="true" default-value="${p:resource.id}"/>
+      </property>
+
+      <property name="maxMemory">
+        <property-ui type="textBox" hidden="true" default-value="1G"/>
+      </property>
+    </properties>
+
+    <post-processing>
+      <![CDATA[
+        if (properties.get("exitCode") != 0) {
+            properties.put("Status", "Failure");
+        }
+        else {
+            properties.put("Status", "Success");
+        }
+     ]]>
+    </post-processing>
+
+    <command program="${PLUGIN_HOME}/javawrapper.sh">
+      <arg value="-Xmx${p:maxMemory}"/>
+      <arg value="-cp"/>
+      <arg file="lib/UrbancodeVFS.jar"/>
+      <arg value="com.urbancode.plugins.ucd.vfs.SyncLocalArtifactsCommand"/>
+      <arg file="${PLUGIN_INPUT_PROPS}"/>
+      <arg file="${PLUGIN_OUTPUT_PROPS}"/>
+    </command>
+  </step-type>
+
+  <step-type name="Download Artifacts for zOS">
+    <server:sub-tag>zOS</server:sub-tag>
+    <description>Download zOS component artifacts from a VFS server.</description>
+
+    <properties>
+      <property name="directoryOffset" required="true">
+        <property-ui type="textBox" description="The working directory to use when executing this command. This is relative to current working directory." label="Directory Offset" default-value="."/>
+      </property>
+
+      <!-- hidden -->
+      <property name="versionId" required="true">
+        <property-ui type="textBox" hidden="true" default-value="${p:version.id}"/>
+      </property>
+
+      <property name="versionName" required="true">
+        <property-ui type="textBox" hidden="true" default-value="${p:version.name}"/>
+      </property>
+
+      <property name="serverUrl">
+        <property-ui type="textBox" hidden="true" default-value="${p:server.url}"/>
+      </property>
+
+      <property name="compId" required="true">
+        <property-ui type="textBox" hidden="true" default-value="${p:component.id}"/>
+      </property>
+
+      <property name="repositoryType" required="true">
+        <property-ui default-value="${p?:version/ucd.repository.type}" hidden="true" label="Repository Type" type="textBox"/>
+      </property>
+
+      <property name="resourceId" required="true">
+        <property-ui default-value="${p:resource.id}" hidden="true" label="Resource Id" type="textBox"/>
+      </property>
+
+      <property name="maxMemory">
+        <property-ui type="textBox" hidden="true" default-value="1G"/>
+      </property>
+    </properties>
+
+    <post-processing>
+      <![CDATA[
+        if (properties.get("exitCode") != 0) {
+            properties.put("Status", "Failure");
+        }
+        else {
+            properties.put("Status", "Success");
+        }
+     ]]>
+    </post-processing>
+
+    <command program="${PLUGIN_HOME}/javawrapper.sh">
+      <arg value="-Xmx${p:maxMemory}"/>
+      <arg value="-cp"/>
+      <arg file="lib/UrbancodeVFS.jar"/>
+      <arg value="com.urbancode.plugins.ucd.vfs.DownloadForZosCommand"/>
+      <arg file="${PLUGIN_INPUT_PROPS}"/>
+      <arg file="${PLUGIN_OUTPUT_PROPS}"/>
+    </command>
+  </step-type>
+
+  <step-type name="Compare version Artifacts for zOS">
+    <server:sub-tag>zOS</server:sub-tag>
+    <description>Compare two zOS component version artifacts of new package format from a VFS server.</description>
+
+    <properties>
+      <property name="versionName1" required="true">
+        <property-ui type="textBox"  description="First version name." label="Version-1" default-value=""/>
+      </property>
+
+      <property name="versionName2" required="true">
+        <property-ui type="textBox"  description="Second version name." label="Version-2" default-value=""/>
+      </property>
+
+      <property name="compName" required="true">
+        <property-ui type="textBox" description="Name of the component that contains versions." label="Component Name" default-value="${p:component.name}"/>
+      </property>
+
+
+      <!-- hidden -->
+
+      <property name="serverUrl">
+        <property-ui type="textBox" hidden="true" default-value="${p:server.url}"/>
+      </property>
+
+      <property name="resourceId" required="true">
+        <property-ui default-value="${p:resource.id}" hidden="true" label="Resource Id" type="textBox"/>
+      </property>
+
+      <property name="maxMemory">
+        <property-ui type="textBox" hidden="true" default-value="1G"/>
+      </property>
+    </properties>
+
+    <post-processing>
+      <![CDATA[
+        if (properties.get("exitCode") != 0) {
+            properties.put("Status", "Failure");
+        }
+        else {
+            properties.put("Status", "Success");
+        }
+     ]]>
+    </post-processing>
+
+    <command program="${PLUGIN_HOME}/javawrapper.sh">
+      <arg value="-Xmx${p:maxMemory}"/>
+      <arg value="-cp"/>
+      <arg file="lib/UrbancodeVFS.jar"/>
+      <arg value="com.urbancode.plugins.ucd.vfs.CompareZosVersionsV2"/>
+      <arg file="${PLUGIN_INPUT_PROPS}"/>
+      <arg file="${PLUGIN_OUTPUT_PROPS}"/>
+    </command>
+  </step-type>
+</plugin>

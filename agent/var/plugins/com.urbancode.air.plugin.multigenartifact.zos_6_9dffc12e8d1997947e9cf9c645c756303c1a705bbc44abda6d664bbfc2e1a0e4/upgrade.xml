@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+- Licensed Materials - Property of HCL
+- UrbanCode Deploy
+- (c) Copyright HCL Technologies Ltd. 2020. All Rights Reserved.
+-
+- U.S. Government Users Restricted Rights - Use, duplication or disclosure restricted by
+- Trademark of HCL Technologies Limited
+-->
+<plugin-upgrade
+        xmlns="http://www.urbancode.com/UpgradeXMLSchema_v1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <migrate to-version="2">
+        <migrate-command name="Generate Multiple Artifact Information">
+          <migrate-properties>
+            <migrate-property name="runJavaVersion" default="EBCDIC"/>
+          </migrate-properties>
+        </migrate-command>
+    </migrate>
+    <migrate to-version="3">
+        <migrate-command name="Generate Multiple Artifact Information">
+        </migrate-command>
+    </migrate>
+    <migrate to-version="4">
+        <migrate-command name="Generate Multiple Artifact Information">
+        	<migrate-properties>
+         		<migrate-property name="ignoreUnresolved" default="false" />
+      		</migrate-properties>
+        </migrate-command>
+    </migrate>
+    <migrate to-version="5">
+        <migrate-command name="Generate Multiple Artifact Information">
+        </migrate-command>
+    </migrate>
+    <migrate to-version="6">
+        <migrate-command name="Generate Multiple Artifact Information"/>
+    </migrate>
+</plugin-upgrade>

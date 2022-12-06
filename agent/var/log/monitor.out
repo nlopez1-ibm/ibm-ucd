@@ -1,0 +1,196 @@
+2022-11-03 16:30:28,406 GMT INFO  main com.urbancode.air.mw.monitor.MonitorMain - MonitorMain Monitor Version: 1.0.0.1118763
+2022-11-03 16:30:28,423 GMT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Timezone: Greenwich Mean Time
+2022-11-03 16:30:28,423 GMT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Working Directory: /u/ibmuser/ibm-ucd/agent/bin
+2022-11-03 16:30:28,427 GMT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java Vendor: IBM Corporation
+2022-11-03 16:30:28,427 GMT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java version 1.8.0_321 (8.0.7.6 - pmz6480sr7fp6-20220330_01(SR7 FP6))
+2022-11-03 16:30:28,427 GMT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java Home: /usr/lpp/java/J8.0_64
+2022-11-03 16:30:28,433 GMT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java Arguments:
+    -Xoptionsfile=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs/options.default
+    -Xlockword:mode=default,noLockword=java/lang/String,noLockword=java/util/MapEntry,noLockword=java/util/HashMap$Entry,noLockword=org/apache/harmony/luni/util/ModifiedMap$Entry,noLockword=java/util/Hashtable$Entry,noLockword=java/lang/invoke/MethodType,noLockword=java/lang/invoke/MethodHandle,noLockword=java/lang/invoke/CollectHandle,noLockword=java/lang/invoke/ConstructorHandle,noLockword=java/lang/invoke/ConvertHandle,noLockword=java/lang/invoke/ArgumentConversionHandle,noLockword=java/lang/invoke/AsTypeHandle,noLockword=java/lang/invoke/ExplicitCastHandle,noLockword=java/lang/invoke/FilterReturnHandle,noLockword=java/lang/invoke/DirectHandle,noLockword=java/lang/invoke/ReceiverBoundHandle,noLockword=java/lang/invoke/DynamicInvokerHandle,noLockword=java/lang/invoke/FieldHandle,noLockword=java/lang/invoke/FieldGetterHandle,noLockword=java/lang/invoke/FieldSetterHandle,noLockword=java/lang/invoke/StaticFieldGetterHandle,noLockword=java/lang/invoke/StaticFieldSetterHandle,noLockword=java/lang/invoke/IndirectHandle,noLockword=java/lang/invoke/InterfaceHandle,noLockword=java/lang/invoke/VirtualHandle,noLockword=java/lang/invoke/PrimitiveHandle,noLockword=java/lang/invoke/InvokeExactHandle,noLockword=java/lang/invoke/InvokeGenericHandle,noLockword=java/lang/invoke/VarargsCollectorHandle,noLockword=java/lang/invoke/ThunkTuple
+    -Djava.lang.stringBuffer.growAggressively=false
+    -XX:+OriginalJDK8HeapSizeCompatibilityMode
+    -XX:+LegacyXlogOption
+    -Xjcl:jclse29
+    -Dcom.ibm.oti.vm.bootstrap.library.path=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x
+    -Dsun.boot.library.path=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x
+    -Djava.library.path=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x:/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x/j9vm:/usr/lpp/java/J8.0_64/lib/s390x:/usr/lpp/java/J8.0_64/../lib/s390x:/usr/lpp/java/J8.0_64/lib/icc:/usr/lpp/java/J8.0_64/lib/s390x:
+    -Djava.home=/usr/lpp/java/J8.0_64
+    -Djava.ext.dirs=/usr/lpp/java/J8.0_64/lib/ext
+    -Duser.dir=/u/ibmuser/ibm-ucd/agent/bin
+    -Djava.class.path=.
+    -Xmx64m
+    -Dfile.encoding=UTF-8
+    -DucdMonitorLogFilePath=/u/ibmuser/ibm-ucd/agent/var/log/monitor.out
+    -DucdLogToConsole=y
+    -Djava.class.path=/u/ibmuser/ibm-ucd/agent/monitor/air-monitor.jar
+    -Dsun.java.command=/u/ibmuser/ibm-ucd/agent/monitor/air-monitor.jar /u/ibmuser/ibm-ucd/agent /u/ibmuser/ibm-ucd/agent/bin/worker-args.conf 7000 -DucdLogToConsole=y
+    -Dsun.java.launcher=SUN_STANDARD
+2022-11-03 16:30:28,443 GMT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - NIC: OSA1500
+2022-11-04 19:34:38,698 GMT INFO  main com.urbancode.air.mw.monitor.MonitorMain - MonitorMain Monitor Version: 1.0.0.1118763
+2022-11-04 19:34:38,718 GMT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Timezone: Greenwich Mean Time
+2022-11-04 19:34:38,718 GMT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Working Directory: /u/ibmuser/ibm-ucd/agent/bin
+2022-11-04 19:34:38,718 GMT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java Vendor: IBM Corporation
+2022-11-04 19:34:38,722 GMT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java version 1.8.0_321 (8.0.7.6 - pmz6480sr7fp6-20220330_01(SR7 FP6))
+2022-11-04 19:34:38,723 GMT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java Home: /usr/lpp/java/J8.0_64
+2022-11-04 19:34:38,729 GMT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java Arguments:
+    -Xoptionsfile=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs/options.default
+    -Xlockword:mode=default,noLockword=java/lang/String,noLockword=java/util/MapEntry,noLockword=java/util/HashMap$Entry,noLockword=org/apache/harmony/luni/util/ModifiedMap$Entry,noLockword=java/util/Hashtable$Entry,noLockword=java/lang/invoke/MethodType,noLockword=java/lang/invoke/MethodHandle,noLockword=java/lang/invoke/CollectHandle,noLockword=java/lang/invoke/ConstructorHandle,noLockword=java/lang/invoke/ConvertHandle,noLockword=java/lang/invoke/ArgumentConversionHandle,noLockword=java/lang/invoke/AsTypeHandle,noLockword=java/lang/invoke/ExplicitCastHandle,noLockword=java/lang/invoke/FilterReturnHandle,noLockword=java/lang/invoke/DirectHandle,noLockword=java/lang/invoke/ReceiverBoundHandle,noLockword=java/lang/invoke/DynamicInvokerHandle,noLockword=java/lang/invoke/FieldHandle,noLockword=java/lang/invoke/FieldGetterHandle,noLockword=java/lang/invoke/FieldSetterHandle,noLockword=java/lang/invoke/StaticFieldGetterHandle,noLockword=java/lang/invoke/StaticFieldSetterHandle,noLockword=java/lang/invoke/IndirectHandle,noLockword=java/lang/invoke/InterfaceHandle,noLockword=java/lang/invoke/VirtualHandle,noLockword=java/lang/invoke/PrimitiveHandle,noLockword=java/lang/invoke/InvokeExactHandle,noLockword=java/lang/invoke/InvokeGenericHandle,noLockword=java/lang/invoke/VarargsCollectorHandle,noLockword=java/lang/invoke/ThunkTuple
+    -Djava.lang.stringBuffer.growAggressively=false
+    -XX:+OriginalJDK8HeapSizeCompatibilityMode
+    -XX:+LegacyXlogOption
+    -Xjcl:jclse29
+    -Dcom.ibm.oti.vm.bootstrap.library.path=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x
+    -Dsun.boot.library.path=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x
+    -Djava.library.path=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x:/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x/j9vm:/usr/lpp/java/J8.0_64/lib/s390x:/usr/lpp/java/J8.0_64/../lib/s390x:/usr/lpp/java/J8.0_64/lib/icc:/usr/lpp/java/J8.0_64/lib/s390x:
+    -Djava.home=/usr/lpp/java/J8.0_64
+    -Djava.ext.dirs=/usr/lpp/java/J8.0_64/lib/ext
+    -Duser.dir=/u/ibmuser/ibm-ucd/agent/bin
+    -Djava.class.path=.
+    -Xmx64m
+    -Dfile.encoding=UTF-8
+    -DucdMonitorLogFilePath=/u/ibmuser/ibm-ucd/agent/var/log/monitor.out
+    -DucdLogToConsole=y
+    -Djava.class.path=/u/ibmuser/ibm-ucd/agent/monitor/air-monitor.jar
+    -Dsun.java.command=/u/ibmuser/ibm-ucd/agent/monitor/air-monitor.jar /u/ibmuser/ibm-ucd/agent /u/ibmuser/ibm-ucd/agent/bin/worker-args.conf 7000 -DucdLogToConsole=y
+    -Dsun.java.launcher=SUN_STANDARD
+2022-11-04 19:34:38,739 GMT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - NIC: OSA1500
+2022-11-05 08:26:54,314 EDT INFO  main com.urbancode.air.mw.monitor.MonitorMain - MonitorMain Monitor Version: 1.0.0.1118763
+2022-11-05 08:26:54,333 EDT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Timezone: Eastern Daylight Time
+2022-11-05 08:26:54,334 EDT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Working Directory: /u/ibmuser/ibm-ucd/agent/bin
+2022-11-05 08:26:54,334 EDT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java Vendor: IBM Corporation
+2022-11-05 08:26:54,334 EDT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java version 1.8.0_321 (8.0.7.6 - pmz6480sr7fp6-20220330_01(SR7 FP6))
+2022-11-05 08:26:54,334 EDT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java Home: /usr/lpp/java/J8.0_64
+2022-11-05 08:26:54,341 EDT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java Arguments:
+    -Xoptionsfile=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs/options.default
+    -Xlockword:mode=default,noLockword=java/lang/String,noLockword=java/util/MapEntry,noLockword=java/util/HashMap$Entry,noLockword=org/apache/harmony/luni/util/ModifiedMap$Entry,noLockword=java/util/Hashtable$Entry,noLockword=java/lang/invoke/MethodType,noLockword=java/lang/invoke/MethodHandle,noLockword=java/lang/invoke/CollectHandle,noLockword=java/lang/invoke/ConstructorHandle,noLockword=java/lang/invoke/ConvertHandle,noLockword=java/lang/invoke/ArgumentConversionHandle,noLockword=java/lang/invoke/AsTypeHandle,noLockword=java/lang/invoke/ExplicitCastHandle,noLockword=java/lang/invoke/FilterReturnHandle,noLockword=java/lang/invoke/DirectHandle,noLockword=java/lang/invoke/ReceiverBoundHandle,noLockword=java/lang/invoke/DynamicInvokerHandle,noLockword=java/lang/invoke/FieldHandle,noLockword=java/lang/invoke/FieldGetterHandle,noLockword=java/lang/invoke/FieldSetterHandle,noLockword=java/lang/invoke/StaticFieldGetterHandle,noLockword=java/lang/invoke/StaticFieldSetterHandle,noLockword=java/lang/invoke/IndirectHandle,noLockword=java/lang/invoke/InterfaceHandle,noLockword=java/lang/invoke/VirtualHandle,noLockword=java/lang/invoke/PrimitiveHandle,noLockword=java/lang/invoke/InvokeExactHandle,noLockword=java/lang/invoke/InvokeGenericHandle,noLockword=java/lang/invoke/VarargsCollectorHandle,noLockword=java/lang/invoke/ThunkTuple
+    -Djava.lang.stringBuffer.growAggressively=false
+    -XX:+OriginalJDK8HeapSizeCompatibilityMode
+    -XX:+LegacyXlogOption
+    -Xjcl:jclse29
+    -Dcom.ibm.oti.vm.bootstrap.library.path=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x
+    -Dsun.boot.library.path=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x
+    -Djava.library.path=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x:/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x/j9vm:/usr/lpp/java/J8.0_64/lib/s390x:/usr/lpp/java/J8.0_64/../lib/s390x:/usr/lpp/java/J8.0_64/lib/icc:/usr/lpp/java/J8.0_64/lib/s390x:/usr/lpp/IBM/cvg/v1r17/go/bin:/u/ibmuser/waziDBB/git-2.14/bin:/u/ibmuser/waziDBB/groovy/bin:/u/ibmuser/waziDBB/dbb-v2/bin:/bin:/usr/sbin:/usr/lpp/java/J8.0_64/bin:/usr/lpp/skrb/bin:/usr/bin:/sbin:/usr/lpp/db2c10/base/bin:/usr/lpp/java/current/bin:/usr/lpp/IBM/cobol/igyv6r3/bin:/usr/lpp/IBM/pli/v5r3/bin:/usr/lpp/IBM/cyp/v3r9/pyz/bin:/usr/lpp/IBM/zoautil/bin:/usr/lpp/db2c10/jdbc/bin:/usr/lpp/IBM/dbb/bin:/rsusr/ported/bin:/usr/lpp/IBM/cnj/v14r0/njsc/bin:/usr/lpp/IBM/cnj/v14r0/IBM/no00121002t-os390-s390x/bin/:/usr/lpp/IBM/cvg/v1r17/go/lib:/usr/lpp/IBM/cyp/v3r9/pyz/lib:/usr/lpp/db2c10/jdbc/lib:/usr/lpp/IBM/zoautil/lib:/usr/lpp/IBM/dbb/lib:/rsusr/ported/lib:/rsusr/ported/lib/perl5/5.24.0/s390/CORE
+    -Djava.home=/usr/lpp/java/J8.0_64
+    -Djava.ext.dirs=/usr/lpp/java/J8.0_64/lib/ext
+    -Duser.dir=/u/ibmuser/ibm-ucd/agent/bin
+    -Djava.class.path=:/usr/lpp/db2c10/base/classes:/usr/lpp/db2c10/base/lib/clp.jar:/usr/lpp/db2c10/jdbc/classes/db2jcc4.jar:/usr/lpp/db2c10/jdbc/classes/db2jcc_javax.jar:/usr/lpp/db2c10/jdbc/classes/sqlj4.zip:/usr/lpp/db2c10/jdbc/classes/db2jcc_license_cisuz.jar
+    -Xmx64m
+    -Dfile.encoding=UTF-8
+    -DucdMonitorLogFilePath=/u/ibmuser/ibm-ucd/agent/var/log/monitor.out
+    -DucdLogToConsole=y
+    -Djava.class.path=/u/ibmuser/ibm-ucd/agent/monitor/air-monitor.jar
+    -Dsun.java.command=/u/ibmuser/ibm-ucd/agent/monitor/air-monitor.jar /u/ibmuser/ibm-ucd/agent /u/ibmuser/ibm-ucd/agent/bin/worker-args.conf 7000 -DucdLogToConsole=y
+    -Dsun.java.launcher=SUN_STANDARD
+2022-11-05 08:26:54,360 EDT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - NIC: OSA1500
+2022-11-05 12:49:35,928 EDT INFO  main com.urbancode.air.mw.monitor.MonitorMain - MonitorMain Monitor Version: 1.0.0.1118763
+2022-11-05 12:49:35,945 EDT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Timezone: Eastern Daylight Time
+2022-11-05 12:49:35,945 EDT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Working Directory: /u/ibmuser/ibm-ucd/agent/bin
+2022-11-05 12:49:35,945 EDT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java Vendor: IBM Corporation
+2022-11-05 12:49:35,945 EDT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java version 1.8.0_321 (8.0.7.6 - pmz6480sr7fp6-20220330_01(SR7 FP6))
+2022-11-05 12:49:35,945 EDT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java Home: /usr/lpp/java/J8.0_64
+2022-11-05 12:49:35,952 EDT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java Arguments:
+    -Xoptionsfile=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs/options.default
+    -Xlockword:mode=default,noLockword=java/lang/String,noLockword=java/util/MapEntry,noLockword=java/util/HashMap$Entry,noLockword=org/apache/harmony/luni/util/ModifiedMap$Entry,noLockword=java/util/Hashtable$Entry,noLockword=java/lang/invoke/MethodType,noLockword=java/lang/invoke/MethodHandle,noLockword=java/lang/invoke/CollectHandle,noLockword=java/lang/invoke/ConstructorHandle,noLockword=java/lang/invoke/ConvertHandle,noLockword=java/lang/invoke/ArgumentConversionHandle,noLockword=java/lang/invoke/AsTypeHandle,noLockword=java/lang/invoke/ExplicitCastHandle,noLockword=java/lang/invoke/FilterReturnHandle,noLockword=java/lang/invoke/DirectHandle,noLockword=java/lang/invoke/ReceiverBoundHandle,noLockword=java/lang/invoke/DynamicInvokerHandle,noLockword=java/lang/invoke/FieldHandle,noLockword=java/lang/invoke/FieldGetterHandle,noLockword=java/lang/invoke/FieldSetterHandle,noLockword=java/lang/invoke/StaticFieldGetterHandle,noLockword=java/lang/invoke/StaticFieldSetterHandle,noLockword=java/lang/invoke/IndirectHandle,noLockword=java/lang/invoke/InterfaceHandle,noLockword=java/lang/invoke/VirtualHandle,noLockword=java/lang/invoke/PrimitiveHandle,noLockword=java/lang/invoke/InvokeExactHandle,noLockword=java/lang/invoke/InvokeGenericHandle,noLockword=java/lang/invoke/VarargsCollectorHandle,noLockword=java/lang/invoke/ThunkTuple
+    -Djava.lang.stringBuffer.growAggressively=false
+    -XX:+OriginalJDK8HeapSizeCompatibilityMode
+    -XX:+LegacyXlogOption
+    -Xjcl:jclse29
+    -Dcom.ibm.oti.vm.bootstrap.library.path=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x
+    -Dsun.boot.library.path=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x
+    -Djava.library.path=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x:/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x/j9vm:/usr/lpp/java/J8.0_64/lib/s390x:/usr/lpp/java/J8.0_64/../lib/s390x:/usr/lpp/java/J8.0_64/lib/icc:/usr/lpp/java/J8.0_64/lib/s390x:/usr/lpp/IBM/cyp/v3r9/pyz/lib:/usr/lpp/db2c10/jdbc/lib:/usr/lpp/db2c10/jdbc/lib:/usr/lpp/IBM/zoautil/lib:/usr/lpp/IBM/dbb/lib:/rsusr/ported/lib:/rsusr/ported/lib/perl5/5.24.0/s390/CORE
+    -Djava.home=/usr/lpp/java/J8.0_64
+    -Djava.ext.dirs=/usr/lpp/java/J8.0_64/lib/ext
+    -Duser.dir=/u/ibmuser/ibm-ucd/agent/bin
+    -Djava.class.path=:/usr/lpp/db2c10/base/classes:/usr/lpp/db2c10/base/lib/clp.jar:/usr/lpp/db2c10/jdbc/classes/db2jcc4.jar:/usr/lpp/db2c10/jdbc/classes/db2jcc_javax.jar:/usr/lpp/db2c10/jdbc/classes/sqlj4.zip:/usr/lpp/db2c10/jdbc/classes/db2jcc_license_cisuz.jar
+    -Xmx64m
+    -Dfile.encoding=UTF-8
+    -DucdMonitorLogFilePath=/u/ibmuser/ibm-ucd/agent/var/log/monitor.out
+    -DucdLogToConsole=y
+    -Djava.class.path=/u/ibmuser/ibm-ucd/agent/monitor/air-monitor.jar
+    -Dsun.java.command=/u/ibmuser/ibm-ucd/agent/monitor/air-monitor.jar /u/ibmuser/ibm-ucd/agent /u/ibmuser/ibm-ucd/agent/bin/worker-args.conf 7000 -DucdLogToConsole=y
+    -Dsun.java.launcher=SUN_STANDARD
+2022-11-05 12:49:35,966 EDT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - NIC: OSA1500
+2022-11-06 09:06:59,389 EST INFO  main com.urbancode.air.mw.monitor.MonitorMain - MonitorMain Monitor Version: 1.0.0.1118763
+2022-11-06 09:06:59,404 EST INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Timezone: Eastern Standard Time
+2022-11-06 09:06:59,404 EST INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Working Directory: /u/ibmuser/ibm-ucd/agent/bin
+2022-11-06 09:06:59,404 EST INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java Vendor: IBM Corporation
+2022-11-06 09:06:59,405 EST INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java version 1.8.0_321 (8.0.7.6 - pmz6480sr7fp6-20220330_01(SR7 FP6))
+2022-11-06 09:06:59,405 EST INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java Home: /usr/lpp/java/J8.0_64
+2022-11-06 09:06:59,412 EST INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java Arguments:
+    -Xoptionsfile=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs/options.default
+    -Xlockword:mode=default,noLockword=java/lang/String,noLockword=java/util/MapEntry,noLockword=java/util/HashMap$Entry,noLockword=org/apache/harmony/luni/util/ModifiedMap$Entry,noLockword=java/util/Hashtable$Entry,noLockword=java/lang/invoke/MethodType,noLockword=java/lang/invoke/MethodHandle,noLockword=java/lang/invoke/CollectHandle,noLockword=java/lang/invoke/ConstructorHandle,noLockword=java/lang/invoke/ConvertHandle,noLockword=java/lang/invoke/ArgumentConversionHandle,noLockword=java/lang/invoke/AsTypeHandle,noLockword=java/lang/invoke/ExplicitCastHandle,noLockword=java/lang/invoke/FilterReturnHandle,noLockword=java/lang/invoke/DirectHandle,noLockword=java/lang/invoke/ReceiverBoundHandle,noLockword=java/lang/invoke/DynamicInvokerHandle,noLockword=java/lang/invoke/FieldHandle,noLockword=java/lang/invoke/FieldGetterHandle,noLockword=java/lang/invoke/FieldSetterHandle,noLockword=java/lang/invoke/StaticFieldGetterHandle,noLockword=java/lang/invoke/StaticFieldSetterHandle,noLockword=java/lang/invoke/IndirectHandle,noLockword=java/lang/invoke/InterfaceHandle,noLockword=java/lang/invoke/VirtualHandle,noLockword=java/lang/invoke/PrimitiveHandle,noLockword=java/lang/invoke/InvokeExactHandle,noLockword=java/lang/invoke/InvokeGenericHandle,noLockword=java/lang/invoke/VarargsCollectorHandle,noLockword=java/lang/invoke/ThunkTuple
+    -Djava.lang.stringBuffer.growAggressively=false
+    -XX:+OriginalJDK8HeapSizeCompatibilityMode
+    -XX:+LegacyXlogOption
+    -Xjcl:jclse29
+    -Dcom.ibm.oti.vm.bootstrap.library.path=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x
+    -Dsun.boot.library.path=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x
+    -Djava.library.path=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x:/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x/j9vm:/usr/lpp/java/J8.0_64/lib/s390x:/usr/lpp/java/J8.0_64/../lib/s390x:/usr/lpp/java/J8.0_64/lib/icc:/usr/lpp/java/J8.0_64/lib/s390x:/usr/lpp/IBM/cvg/v1r17/go/bin:/u/ibmuser/waziDBB/git-2.14/bin:/u/ibmuser/waziDBB/groovy/bin:/u/ibmuser/waziDBB/dbb-v2/bin:/bin:/usr/sbin:/usr/lpp/java/J8.0_64/bin:/usr/lpp/skrb/bin:/usr/bin:/sbin:/usr/lpp/db2c10/base/bin:/usr/lpp/java/current/bin:/usr/lpp/IBM/cobol/igyv6r3/bin:/usr/lpp/IBM/pli/v5r3/bin:/usr/lpp/IBM/cyp/v3r9/pyz/bin:/usr/lpp/IBM/zoautil/bin:/usr/lpp/db2c10/jdbc/bin:/usr/lpp/IBM/dbb/bin:/rsusr/ported/bin:/usr/lpp/IBM/cnj/v14r0/njsc/bin:/usr/lpp/IBM/cnj/v14r0/IBM/no00121002t-os390-s390x/bin/:/usr/lpp/IBM/cvg/v1r17/go/lib:/usr/lpp/IBM/cyp/v3r9/pyz/lib:/usr/lpp/db2c10/jdbc/lib:/usr/lpp/IBM/zoautil/lib:/usr/lpp/IBM/dbb/lib:/rsusr/ported/lib:/rsusr/ported/lib/perl5/5.24.0/s390/CORE
+    -Djava.home=/usr/lpp/java/J8.0_64
+    -Djava.ext.dirs=/usr/lpp/java/J8.0_64/lib/ext
+    -Duser.dir=/u/ibmuser/ibm-ucd/agent/bin
+    -Djava.class.path=:/usr/lpp/db2c10/base/classes:/usr/lpp/db2c10/base/lib/clp.jar:/usr/lpp/db2c10/jdbc/classes/db2jcc4.jar:/usr/lpp/db2c10/jdbc/classes/db2jcc_javax.jar:/usr/lpp/db2c10/jdbc/classes/sqlj4.zip:/usr/lpp/db2c10/jdbc/classes/db2jcc_license_cisuz.jar
+    -Xmx64m
+    -Dfile.encoding=UTF-8
+    -DucdMonitorLogFilePath=/u/ibmuser/ibm-ucd/agent/var/log/monitor.out
+    -DucdLogToConsole=y
+    -Djava.class.path=/u/ibmuser/ibm-ucd/agent/monitor/air-monitor.jar
+    -Dsun.java.command=/u/ibmuser/ibm-ucd/agent/monitor/air-monitor.jar /u/ibmuser/ibm-ucd/agent /u/ibmuser/ibm-ucd/agent/bin/worker-args.conf 7000 -DucdLogToConsole=y
+    -Dsun.java.launcher=SUN_STANDARD
+2022-11-06 09:06:59,422 EST INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - NIC: OSA1500
+2022-11-07 09:52:36,133 EST INFO  main com.urbancode.air.mw.monitor.MonitorMain - MonitorMain Monitor Version: 1.0.0.1118763
+2022-11-07 09:52:36,145 EST INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Timezone: Eastern Standard Time
+2022-11-07 09:52:36,148 EST INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Working Directory: /u/ibmuser/ibm-ucd/agent/bin
+2022-11-07 09:52:36,149 EST INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java Vendor: IBM Corporation
+2022-11-07 09:52:36,149 EST INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java version 1.8.0_321 (8.0.7.6 - pmz6480sr7fp6-20220330_01(SR7 FP6))
+2022-11-07 09:52:36,149 EST INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java Home: /usr/lpp/java/J8.0_64
+2022-11-07 09:52:36,155 EST INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java Arguments:
+    -Xoptionsfile=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs/options.default
+    -Xlockword:mode=default,noLockword=java/lang/String,noLockword=java/util/MapEntry,noLockword=java/util/HashMap$Entry,noLockword=org/apache/harmony/luni/util/ModifiedMap$Entry,noLockword=java/util/Hashtable$Entry,noLockword=java/lang/invoke/MethodType,noLockword=java/lang/invoke/MethodHandle,noLockword=java/lang/invoke/CollectHandle,noLockword=java/lang/invoke/ConstructorHandle,noLockword=java/lang/invoke/ConvertHandle,noLockword=java/lang/invoke/ArgumentConversionHandle,noLockword=java/lang/invoke/AsTypeHandle,noLockword=java/lang/invoke/ExplicitCastHandle,noLockword=java/lang/invoke/FilterReturnHandle,noLockword=java/lang/invoke/DirectHandle,noLockword=java/lang/invoke/ReceiverBoundHandle,noLockword=java/lang/invoke/DynamicInvokerHandle,noLockword=java/lang/invoke/FieldHandle,noLockword=java/lang/invoke/FieldGetterHandle,noLockword=java/lang/invoke/FieldSetterHandle,noLockword=java/lang/invoke/StaticFieldGetterHandle,noLockword=java/lang/invoke/StaticFieldSetterHandle,noLockword=java/lang/invoke/IndirectHandle,noLockword=java/lang/invoke/InterfaceHandle,noLockword=java/lang/invoke/VirtualHandle,noLockword=java/lang/invoke/PrimitiveHandle,noLockword=java/lang/invoke/InvokeExactHandle,noLockword=java/lang/invoke/InvokeGenericHandle,noLockword=java/lang/invoke/VarargsCollectorHandle,noLockword=java/lang/invoke/ThunkTuple
+    -Djava.lang.stringBuffer.growAggressively=false
+    -XX:+OriginalJDK8HeapSizeCompatibilityMode
+    -XX:+LegacyXlogOption
+    -Xjcl:jclse29
+    -Dcom.ibm.oti.vm.bootstrap.library.path=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x
+    -Dsun.boot.library.path=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x
+    -Djava.library.path=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x:/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x/j9vm:/usr/lpp/java/J8.0_64/lib/s390x:/usr/lpp/java/J8.0_64/../lib/s390x:/usr/lpp/java/J8.0_64/lib/icc:/usr/lpp/java/J8.0_64/lib/s390x:/usr/lpp/IBM/cvg/v1r17/go/bin:/u/ibmuser/waziDBB/git-2.14/bin:/u/ibmuser/waziDBB/groovy/bin:/u/ibmuser/waziDBB/dbb-v2/bin:/bin:/usr/sbin:/usr/lpp/java/J8.0_64/bin:/usr/lpp/skrb/bin:/usr/bin:/sbin:/usr/lpp/db2c10/base/bin:/usr/lpp/java/current/bin:/usr/lpp/IBM/cobol/igyv6r3/bin:/usr/lpp/IBM/pli/v5r3/bin:/usr/lpp/IBM/cyp/v3r9/pyz/bin:/usr/lpp/IBM/zoautil/bin:/usr/lpp/db2c10/jdbc/bin:/usr/lpp/IBM/dbb/bin:/rsusr/ported/bin:/usr/lpp/IBM/cnj/v14r0/njsc/bin:/usr/lpp/IBM/cnj/v14r0/IBM/no00121002t-os390-s390x/bin/:/usr/lpp/IBM/cvg/v1r17/go/lib:/usr/lpp/IBM/cyp/v3r9/pyz/lib:/usr/lpp/db2c10/jdbc/lib:/usr/lpp/IBM/zoautil/lib:/usr/lpp/IBM/dbb/lib:/rsusr/ported/lib:/rsusr/ported/lib/perl5/5.24.0/s390/CORE
+    -Djava.home=/usr/lpp/java/J8.0_64
+    -Djava.ext.dirs=/usr/lpp/java/J8.0_64/lib/ext
+    -Duser.dir=/u/ibmuser/ibm-ucd/agent/bin
+    -Djava.class.path=:/usr/lpp/db2c10/base/classes:/usr/lpp/db2c10/base/lib/clp.jar:/usr/lpp/db2c10/jdbc/classes/db2jcc4.jar:/usr/lpp/db2c10/jdbc/classes/db2jcc_javax.jar:/usr/lpp/db2c10/jdbc/classes/sqlj4.zip:/usr/lpp/db2c10/jdbc/classes/db2jcc_license_cisuz.jar
+    -Xmx64m
+    -Dfile.encoding=UTF-8
+    -DucdMonitorLogFilePath=/u/ibmuser/ibm-ucd/agent/var/log/monitor.out
+    -DucdLogToConsole=y
+    -Djava.class.path=/u/ibmuser/ibm-ucd/agent/monitor/air-monitor.jar
+    -Dsun.java.command=/u/ibmuser/ibm-ucd/agent/monitor/air-monitor.jar /u/ibmuser/ibm-ucd/agent /u/ibmuser/ibm-ucd/agent/bin/worker-args.conf 7000 -DucdLogToConsole=y
+    -Dsun.java.launcher=SUN_STANDARD
+2022-11-07 09:52:36,168 EST INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - NIC: OSA1500
+2022-11-08 13:57:30,069 GMT INFO  main com.urbancode.air.mw.monitor.MonitorMain - MonitorMain Monitor Version: 1.0.0.1118763
+2022-11-08 13:57:30,087 GMT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Timezone: Greenwich Mean Time
+2022-11-08 13:57:30,087 GMT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Working Directory: /u/ibmuser/ibm-ucd/agent/bin
+2022-11-08 13:57:30,087 GMT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java Vendor: IBM Corporation
+2022-11-08 13:57:30,088 GMT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java version 1.8.0_321 (8.0.7.6 - pmz6480sr7fp6-20220330_01(SR7 FP6))
+2022-11-08 13:57:30,088 GMT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java Home: /usr/lpp/java/J8.0_64
+2022-11-08 13:57:30,091 GMT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - Java Arguments:
+    -Xoptionsfile=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs/options.default
+    -Xlockword:mode=default,noLockword=java/lang/String,noLockword=java/util/MapEntry,noLockword=java/util/HashMap$Entry,noLockword=org/apache/harmony/luni/util/ModifiedMap$Entry,noLockword=java/util/Hashtable$Entry,noLockword=java/lang/invoke/MethodType,noLockword=java/lang/invoke/MethodHandle,noLockword=java/lang/invoke/CollectHandle,noLockword=java/lang/invoke/ConstructorHandle,noLockword=java/lang/invoke/ConvertHandle,noLockword=java/lang/invoke/ArgumentConversionHandle,noLockword=java/lang/invoke/AsTypeHandle,noLockword=java/lang/invoke/ExplicitCastHandle,noLockword=java/lang/invoke/FilterReturnHandle,noLockword=java/lang/invoke/DirectHandle,noLockword=java/lang/invoke/ReceiverBoundHandle,noLockword=java/lang/invoke/DynamicInvokerHandle,noLockword=java/lang/invoke/FieldHandle,noLockword=java/lang/invoke/FieldGetterHandle,noLockword=java/lang/invoke/FieldSetterHandle,noLockword=java/lang/invoke/StaticFieldGetterHandle,noLockword=java/lang/invoke/StaticFieldSetterHandle,noLockword=java/lang/invoke/IndirectHandle,noLockword=java/lang/invoke/InterfaceHandle,noLockword=java/lang/invoke/VirtualHandle,noLockword=java/lang/invoke/PrimitiveHandle,noLockword=java/lang/invoke/InvokeExactHandle,noLockword=java/lang/invoke/InvokeGenericHandle,noLockword=java/lang/invoke/VarargsCollectorHandle,noLockword=java/lang/invoke/ThunkTuple
+    -Djava.lang.stringBuffer.growAggressively=false
+    -XX:+OriginalJDK8HeapSizeCompatibilityMode
+    -XX:+LegacyXlogOption
+    -Xjcl:jclse29
+    -Dcom.ibm.oti.vm.bootstrap.library.path=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x
+    -Dsun.boot.library.path=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x
+    -Djava.library.path=/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x:/usr/lpp/java/J8.0_64/lib/s390x/compressedrefs:/usr/lpp/java/J8.0_64/lib/s390x/j9vm:/usr/lpp/java/J8.0_64/lib/s390x:/usr/lpp/java/J8.0_64/../lib/s390x:/usr/lpp/java/J8.0_64/lib/icc:/usr/lpp/java/J8.0_64/lib/s390x:
+    -Djava.home=/usr/lpp/java/J8.0_64
+    -Djava.ext.dirs=/usr/lpp/java/J8.0_64/lib/ext
+    -Duser.dir=/u/ibmuser/ibm-ucd/agent/bin
+    -Djava.class.path=.
+    -Xmx64m
+    -Dfile.encoding=UTF-8
+    -DucdMonitorLogFilePath=/u/ibmuser/ibm-ucd/agent/var/log/monitor.out
+    -DucdLogToConsole=y
+    -Djava.class.path=/u/ibmuser/ibm-ucd/agent/monitor/air-monitor.jar
+    -Dsun.java.command=/u/ibmuser/ibm-ucd/agent/monitor/air-monitor.jar /u/ibmuser/ibm-ucd/agent /u/ibmuser/ibm-ucd/agent/bin/worker-args.conf 7000 -DucdLogToConsole=y
+    -Dsun.java.launcher=SUN_STANDARD
+2022-11-08 13:57:30,101 GMT INFO  main com.urbancode.air.diagnostics.logging.DiagnosticLoggingUtil - NIC: OSA1500

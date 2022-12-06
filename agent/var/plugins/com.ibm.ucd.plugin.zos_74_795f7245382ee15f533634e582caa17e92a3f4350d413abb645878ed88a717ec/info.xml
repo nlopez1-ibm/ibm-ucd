@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- - Licensed Materials - Property of IBM* and/or HCL** - UrbanCode Deploy
+    - UrbanCode Build - UrbanCode Release - AnthillPro - (c) Copyright IBM Corporation
+    2011, 2017. All Rights Reserved. - (c) Copyright HCL Technologies Ltd. 2022.
+    All Rights Reserved. - - U.S. Government Users Restricted Rights - Use, duplication
+    or disclosure restricted by - GSA ADP Schedule Contract with IBM Corp. -
+    - * Trademark of International Business Machines - ** Trademark of HCL Technologies
+    Limited --><pluginInfo>
+    <!-- **author name IS required** The Author Section is used to give credit
+        to the author of the plugin. Name is the only required element/attribute,
+        but feel free to also include your email, website or bio to allow users of
+        your plugin to praise your work, ask questions or share their use case to
+        help grow your plugin's functionality. -->
+
+    <author name="UrbanCode">
+        <organization>UrbanCode</organization>
+        <email>info@urbancode.com</email>
+        <website>http://urbancode.com</website>
+        <bio/>
+    </author>
+
+    <!-- **intergration type IS Required** The integration type section identifies
+        where the plugin fits into the process excepted types are SCM, Build, Artifact,
+        Automation, Deploy For example: The plugin pulls Artifacts from an artifact
+        repository during deployment the Type would be "Artifact" or The plugin deploys
+        to a middleware server the Type would be "Deploy" -->
+
+    <integration type="Automation"/>
+
+    <!-- **source is NOT required** The source section identifies the location
+        of the plugin source code For example https://github.com/... -->
+
+    <source url=""/>
+
+    <!-- **license type is NOT required** If your plugin uses any licensed software
+        please acknowledge it by listing the license type below -->
+
+    <licenses>
+        <license type=""/>
+    </licenses>
+
+    <!-- **tool-description IS required** The tool-description section is used
+        to summarize the software the plugin was created to integrate with. For example:
+        Apache Ant is a software tool to automate software processes during the build
+        or deployment of an application. Ant uses an propitiatory XML file to define
+        build and/or deployment steps(referred to as targets by ant) . The Ant executable
+        is called to execute the targets in the build.xml. -->
+
+    <tool-description>
+        Developed by UrbanCode, for z/OS.
+    </tool-description>
+
+    <release-version>74.1140702</release-version>
+
+    <release-notes>
+        <release-note plugin-version="1">
+            Used to do zOS deployment
+        </release-note>
+        <release-note plugin-version="5">
+            In version 5
+            Toolkit Home property is removed.
+            Deployment Base Path property is made optional.
+            TSO command step is updated to support custom property
+        </release-note>
+        <release-note plugin-version="7">
+            In version 7
+            The artifact iteration function is removed from the TSO command step.
+            It is suggested to use Generate Artifact Information step to generate
+            the commands and pass to TSO step to execute.
+        </release-note>
+        <release-note plugin-version="8">
+            Run MVS Command step is added.
+        </release-note>
+        <release-note plugin-version="9">
+            Submit job step is enhanced to allow submitting multiple jobs.
+        </release-note>
+        <release-note plugin-version="10">
+            Following changes are made to the Deploy Data Set step.
+
+            Added an option to prohibit creating new data sets when deploy.
+
+            Removed Use Environment PDS Mapping checkbox and Environment PDS Mapping
+            field to
+            normalize all mapping rules to the PDS Mapping field.
+            PDS Mapping field is automatically upgraded to use
+            ${p:deploy.env.pds.mapping}
+            as its default value. For processes which only uses in step PDS Mapping
+            or
+            Environment PDS Mapping, no change is needed. For processes which uses a
+            combination
+            of in step PDS Mapping and Environment PDS Mapping, please append
+            ${p:deploy.env.pds.mapping} as a new line to the in step PDS Mapping
+            field.
+        </release-note>
+        <release-note plugin-version="11">
+            NOTE: UrbanCode Deploy Server 6.1.1.5 or IBM UrbanCode Deploy Versioned
+            File Storage plug-in v22 is a prerequisite.
+
+            Updated Copy Artifacts step and FTP Artifacts step to do additional
+            validation for versions stored in CodeStation.
+            Added new template process for downloading artifacts from UrbanCode Deploy
+            server CodeStation.
+        </release-note>
+        <release-note plugin-version="12">
+            Updated Submit Job and Wait For Job steps to allow passticket
+            authentication.
+        </release-note>
+        <release-note plugin-version="13">
+            Updated Generate Artifact Info step so that it works for versions which have
+            not been deployed. To benefit from this
+            enhancement, versions have to be created with UrbanCode Deploy v6.1.1.6 and
+            later.
+            Updated Rollback Data Sets step so that added data set members will be
+            deleted during rollback.
+            Fixed an issue where rollback of a new deployed module reports error.
+        </release-note>
+        <release-note plugin-version="14">
+            Fixed an issue where deploy data set and rollback data set requires data
+            set ALTER privilege when unnecessary.
+        </release-note>
+        <release-note plugin-version="15">
+            Updated Generate Artifact Info step to support sequential data set and data
+            set deletion.
+            Updated Generate Artifact Info step to add an option to fail the step when
+            no result is generated. A count output property
+            is also added to store the number of artifacts being generated.
+            Updated Replace Tokens MVS step to allow updates to a data set which is
+            opened by other readers. The step now uses DISP=SHR
+            to open the data set for output.
+        </release-note>
+        <release-note plugin-version="16">
+            Updated Submit Job step to support a default job statement.
+            Enhanced help for data set allocation steps
+        </release-note>
+        <release-note plugin-version="17">
+            Fixed an issue where Submit Job failed to use PassTicket authentication.
+            Enhanced help for Submit Job and Wait For Job steps.
+        </release-note>
+        <release-note plugin-version="18">
+            NOTE: IBM UrbanCode Deploy Versioned File Storage plug-in v24 is a
+            prerequisite.
+            Fixed a problem when deploying a component to multiple resources resolving
+            to the same agent.
+        </release-note>
+        <release-note plugin-version="19">
+            Updated Deploy Data Sets step so that a backup will not be taken again when
+            re-deploying the same version.
+        </release-note>
+        <release-note plugin-version="20">
+            Updated FTP Artifact step to allow passticket authentication
+            Updated Replace Tokens MVS step to support sequential data set
+            Updated Submit Job step to support submitting multiple input JCLs
+        </release-note>
+        <release-note plugin-version="21">
+            Support deployment of generic artifacts. Generic artifacts are changes which
+            are not physical files. See knowledge center for how to create
+            generic artifacts version using ship list.
+            Updated Generate Artifact Information step to allow regular expressions in
+            filters.
+            Updated UI text in multiple steps to use Data set instead of PDS since we
+            also support sequential data set.
+        </release-note>
+        <release-note plugin-version="22">
+            Fixed APAR PI57417. Plug-in now checks the agent settings for acceptance
+            of self signed certificates.
+            Improved error message in Deploy Data Sets step when permission problem
+            occurs.
+        </release-note>
+        <release-note plugin-version="23">
+            Fixed and problem when replacing tokens in VB data sets.
+        </release-note>
+        <release-note plugin-version="24">
+            Updated Rollback Data Sets step to prevent risky rollbacks.
+        </release-note>
+        <release-note plugin-version="25">
+            Updated Deploy Data Sets, Rollback Data Sets and Generate Artifact
+            Information steps to
+            support the deployment of both MVS data sets and HFS files in a single
+            component version.
+            NOTE: IBM UrbanCode Deploy Server 6.2.2 and same level of zOS deployment
+            tools are required
+            to create component versions containing both MVS data sets and HFS
+            files.
+            Updated Deploy Data Sets step to allow disable backup function.
+        </release-note>
+        <release-note plugin-version="26">
+            Updated Generate Artifact Information step to support order by.
+        </release-note>
+        <release-note plugin-version="27">
+            Added support for encrypted input and output properties.
+            Updated Replace Tokens MVS step to preserve ISPF statistics.
+            Fixed bugs.
+        </release-note>
+        <release-note plugin-version="28">
+            Fixed a problem in Replace Tokens MVS step which may cause failure when
+            running multiple
+            replacement steps concurrently.
+            Fixed a problem in Replace Tokens MVS step when using wildcard.
+        </release-note>
+        <release-note plugin-version="29">
+            Fixed a problem in Deploy Data Sets step log.
+        </release-note>
+        <release-note plugin-version="30">
+            Updated Deploy Data Sets step to support versions with source information.
+        </release-note>
+        <release-note plugin-version="31">
+            Updated Deploy Data Sets step and Rollback Data Sets step to support full
+            versions.
+            Fixed a problem that Submit Job throws exception when timeout.
+        </release-note>
+        <release-note plugin-version="32">
+            NOTE: UrbanCode Deploy Versioned File Storage plug-in v30 is a
+            prerequisite.
+            Updated Generate Artifact Information step to support SCM information
+            Support pattern % in PDS mapping
+        </release-note>
+        <release-note plugin-version="36">
+            Updated Deploy Data Sets step to support delta deploy
+            Updated Deploy Data Sets step to support deploying of merged versions.
+            NOTE: UrbanCode Deploy server 7.0 and the same level of the agent is
+            required for both features.
+        </release-note>
+        <release-note plugin-version="38">
+            Updated FTP Artifacts step to support SFTP
+        </release-note>
+        <release-note plugin-version="39">
+            PH01955 - Fixed the issue with deploy datasets failing when we use * with an
+            add and delete of same PDS
+            PH01081 - Fixed the issue with class not found for JES logger
+            Release 39.992981
+            PH03567 - To fix the issue of environment properties getting trimmed in
+            "Replace Tokens MVS" step
+            PH03684 - APAR number for when a REXX/ISPF process that gives out more than
+            2000+ lines are run from UCD, the response never comes back to the
+            server.
+        </release-note>
+        <release-note plugin-version="41">
+            Updated Deploy Data Sets step to support runtime delta deploy
+            NOTE: UrbanCode Deploy server 7.0.2 and the same level of the agent is
+            required.
+        </release-note>
+        <release-note plugin-version="44">
+            Allowing mutiple source and multiple target directories to deploy instead of
+            one hfstargetDir.
+            NOTE: UrbanCode Deploy server 7.0.3 and the same level of the agent is
+            required.
+        </release-note>
+        <release-note plugin-version="45">
+            Fixing CVE:CVE-2019-4233
+        </release-note>
+        <release-note plugin-version="46">
+            Added functionality for the new package format deploy
+        </release-note>
+        <release-note plugin-version="47">
+            Fixed performance issues related to new package format deploy
+        </release-note>
+        <release-note plugin-version="48">
+            PH11769- Fix for replace tokens with EAV VTOC volumes
+        </release-note>
+        <release-note plugin-version="49">
+            Rewriting Submit Job groovy program in Java
+            Added functionality to delete all contents in the target folder and then
+            deploy the artifacts from UCD version
+            Added functionality to determine the toolkit version and call appropriate
+            methods
+            fixed an issue with rollback for deleted HFS files
+        </release-note>
+        <release-note plugin-version="50">
+            Rewriting Replace Tokens MVS groovy program in Java
+        </release-note>
+        <release-note plugin-version="51">
+            Rewriting Generate Version Artifact Information groovy program in Java
+            Fixed null pointer exception error when deployType filter is applied to resource with no deployType
+            Fixed null pointer exception error when regular expression is used in deployType
+            PH23624 - Fixed NoClassDef error for submit job step using passcode authentication
+        </release-note>
+        <release-note plugin-version="52">
+            PH24188 - Fixed deployment freeze for large component version
+            Support for copyTypes with package format v2
+            Enhancement to ignore unresolved properties in generate artifacts information step
+        </release-note>
+        <release-note plugin-version="53">
+            Enhancement for Partial Deployment based on Container Filter
+            Fixed exception for HFS Deployment
+        </release-note>
+        <release-note plugin-version="54">
+            Ported following steps to run from a non-zOS agent as well
+            Submit job / Wait for job
+            Minor bug fix for rollback
+            Moved FTP plugin step into a new plugin
+            Added permission checks for ISPF work directory and file
+            Fixed incompatible code with Java 7 for Submit Job step
+            Enhancement on runtime delta deployment
+            Fixed exception for HFS deployment with new Ant version
+            Fixed exception for HFS rollback with new Ant version
+            Minor improvements
+        </release-note>
+        <release-note plugin-version="55">
+            Added hidden input to pass Binder API Path for RUNTIME delta deployment
+            Added check box to print debug logs for Deploy and Rollback steps
+            Added check box to print each job in a new page (supported only from Java 8)
+        </release-note>
+        <release-note plugin-version="56">
+            Added support for DUMMY in target for pdsMapping field of Deploy datasets
+            PH34874 - Fixed the issue of ISPF command executions reported as success when it is a failure
+            PH35042 - Fixed Array Index Out of Bound failure
+            Fixed newline character parsing in Generate artifact template input
+        </release-note>
+        <release-note plugin-version="57">
+            Added support for submitting job using Agent Id or Impersonation Id
+            Fixed bug with prevent risky rollback for a failed deployment
+            Reformatted check access failure message
+        </release-note>
+        <release-note plugin-version="58">
+            Added support for wait for job using Agent Id or Impersonation Id
+        </release-note>
+        <release-note plugin-version="59">
+            Delete and Update/Create Deploy-Action types on same container/PDS is made possible
+            Changed Prevent Risky Rollback input in Rollback step from check-box to Drop-Down
+            Fixed Page End statement in submit job step to display after output
+            APAR-PH41930 Parsing return codes from ISPF gateway has been enhanced
+            Fixed HFS untar issue for Ant version upgrade
+        </release-note>
+        <release-note plugin-version="60">
+            Improvements in HFS deployment and rollback
+            Fixed Exception for HFS deployment with delete target directory set
+        </release-note>
+        <release-note plugin-version="61">
+            Allocate steps are migrated to Java
+        </release-note>
+        <release-note plugin-version="62">
+            Added check box to delete dataset if already exist for Allocate steps
+        </release-note>
+        <release-note plugin-version="63">
+            Minor enhancements in Submit Job and Wait for Job steps
+            Fixed handling of temporary datasets in case of failure in new package format
+            Improvements in new package format
+            TEMP Dataset in V2 is created with CYL and can handle easily over 100k lines
+            Fix ZFileException when file was open
+            Minor improvements in exception handling
+            Fixed IGD17036I in v2 package deployments
+        </release-note>
+        <release-note plugin-version="64">
+            Remove log4j functionality related to: CVE-2019-17571, CVE-2020-9488. CVE-2021-4104, CVE-2022-23302,
+            CVE-2022-23305, CVE-2022-23307
+        </release-note>
+        <release-note plugin-version="65">
+            Copy Artifacts step migrated to Java
+            Copy Data Set step migrated to Java
+        </release-note>
+        <release-note plugin-version="66">
+            Remove Redundant Versions step migrated to Java
+            Remove All versions step migrated to Java
+        </release-note>
+        <release-note plugin-version="67">
+            Minor improvements
+        </release-note>
+        <release-note plugin-version="68">
+            Update udclient and uDeployRestClient
+            Minor improvement in Allocate step
+            Fixed issue with GDG version creation in Allocate Steps
+            Bug fix and Minor improvements
+        </release-note>
+        <release-note plugin-version="69">
+            Added new step to delete a dataset
+        </release-note>
+        <release-note plugin-version="70">
+            Wait For Job and MVS step migrated to Java
+            Fixed issue with Java 11 to run shell script
+        </release-note>
+        <release-note plugin-version="71">
+            TSO ISPF command and FTP Artifacts step migrated to Java
+        </release-note>
+        <release-note plugin-version="72">
+            Added support for deleting multiple datasets using Delete dataset step
+            Fixed security issue CVE-2021-29425
+        </release-note>
+        <release-note plugin-version="73">
+            Fixed issue with replace token and minor improvements in Submit Job step
+        </release-note>
+        <release-note plugin-version="74">
+            Added new step to clean-up backup files
+            Minor improvements and fixed permission issue with cleanup backup files step
+        </release-note>
+    </release-notes>
+</pluginInfo>

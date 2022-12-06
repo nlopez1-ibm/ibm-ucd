@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+- Licensed Materials - Property of IBM* and/or HCL**
+- UrbanCode Deploy
+- UrbanCode Build
+- UrbanCode Release
+- AnthillPro
+- (c) Copyright IBM Corporation 2011, 2017. All Rights Reserved.
+- (c) Copyright HCL Technologies Ltd. 2021. All Rights Reserved.
+-
+- U.S. Government Users Restricted Rights - Use, duplication or disclosure restricted by
+- GSA ADP Schedule Contract with IBM Corp.
+-
+- * Trademark of International Business Machines
+- ** Trademark of HCL Technologies Limited
+-->
+<plugin-upgrade
+        xmlns="http://www.urbancode.com/UpgradeXMLSchema_v1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <migrate to-version="5">
+    <migrate-command name="Download Artifacts By Label">
+      <migrate-properties>
+        <migrate-property name="serverUrl" default="${p:server.url}" />
+        <migrate-property name="repositoryUrl" default="${p:server.url}/vfs" />
+        <migrate-property name="compName" default="${p:component.name}" />
+        <migrate-property name="resName" default="${p:resource.name}" />
+        <migrate-property name="useSync" default="false" />
+      </migrate-properties>
+    </migrate-command>
+    <migrate-command name="Download Artifacts">
+      <migrate-properties>
+        <migrate-property name="repositoryUrl" default="${p:server.url}/vfs" />
+      </migrate-properties>
+    </migrate-command>
+  </migrate>
+  <migrate to-version="7">
+    <migrate-command name="Download Artifacts" old="Download Artifacts By Label">
+    </migrate-command>
+    <migrate-command name="Upload Artifacts">
+      <migrate-properties>
+        <migrate-property name="repositoryUrl" default="${p:server.url}/vfs" />
+        <migrate-property name="label" default="${p:version.name}" />
+      </migrate-properties>
+    </migrate-command>
+    <migrate-command name="Verify Local Artifacts">
+    </migrate-command>
+  </migrate>
+  <migrate to-version="8">
+    <migrate-command name="Download Artifacts">
+      <migrate-properties>
+        <migrate-property name="setFileExecuteBits" default="false" />
+        <migrate-property name="verifyFileIntegrity" default="false" />
+      </migrate-properties>
+    </migrate-command>
+    <migrate-command name="Upload Artifacts">
+      <migrate-properties>
+        <migrate-property name="saveFileExecuteBits" default="false" />
+      </migrate-properties>
+    </migrate-command>
+    <migrate-command name="Verify Local Artifacts">
+    </migrate-command>
+  </migrate>
+  <migrate to-version="9">
+    <migrate-command name="Download Artifacts">
+      <migrate-properties>
+        <migrate-property name="useCompression" default="false" />
+      </migrate-properties>
+    </migrate-command>
+  </migrate>
+  <migrate to-version="10">
+    <migrate-command name="Download Artifacts">
+      <migrate-properties>
+        <migrate-property name="useCache" default="false" />
+        <migrate-property name="cacheDir" default="" />
+      </migrate-properties>
+    </migrate-command>
+  </migrate>
+  <migrate to-version="11">
+    <migrate-command name="Download Artifacts" />
+    <migrate-command name="Verify Local Artifacts" />
+    <migrate-command name="Upload  Artifacts" />
+  </migrate>
+  <migrate to-version="12">
+    <migrate-command name="Download Artifacts" />
+    <migrate-command name="Verify Local Artifacts" />
+    <migrate-command name="Upload  Artifacts" />
+  </migrate>
+  <migrate to-version="13">
+    <migrate-command name="Download Artifacts">
+      <migrate-properties>
+        <migrate-property name="syncMode" old="useSync"/>
+        <migrate-property name="avoidHashes" old="useSync"/>
+      </migrate-properties>
+    </migrate-command>
+    <migrate-command name="Verify Local Artifacts" />
+    <migrate-command name="Upload  Artifacts" />
+  </migrate>
+  <migrate to-version="14">
+    <migrate-command name="Download Artifacts">
+      <migrate-properties>
+        <migrate-property name="fullVerification" default="true"/>
+      </migrate-properties>
+    </migrate-command>
+    <migrate-command name="Verify Local Artifacts" />
+    <migrate-command name="Upload  Artifacts" />
+  </migrate>
+  <migrate to-version="15">
+    <migrate-command name="Download Artifacts" />
+    <migrate-command name="Verify Local Artifacts" />
+    <migrate-command name="Upload  Artifacts" />
+  </migrate>
+  <migrate to-version="16">
+    <migrate-command name="Download Artifacts" >
+      <migrate-properties>
+        <migrate-property name="artifactSetBaseDir" default=""/>
+      </migrate-properties>
+    </migrate-command>
+    <migrate-command name="Verify Local Artifacts" />
+    <migrate-command name="Upload  Artifacts" />
+  </migrate>
+  <migrate to-version="17">
+    <migrate-command name="Download Artifacts">
+      <migrate-properties>
+        <migrate-property name="charset" default=""/>
+      </migrate-properties>
+    </migrate-command>
+    <migrate-command name="Verify Local Artifacts" />
+    <migrate-command name="Upload  Artifacts" />
+  </migrate>
+  <migrate to-version="18">
+    <migrate-command name="Download Artifacts" />
+    <migrate-command name="Verify Local Artifacts" />
+    <migrate-command name="Upload  Artifacts" />
+    <migrate-command name="Sync Artifacts" />
+  </migrate>
+  <migrate to-version="19">
+    <migrate-command name="Download Artifacts">
+      <migrate-properties>
+        <migrate-property name="versionId" default="${p:version.id}"/>
+      </migrate-properties>
+    </migrate-command>
+
+    <migrate-command name="Verify Local Artifacts">
+      <migrate-properties>
+        <migrate-property name="versionId" default="${p:version.id}"/>
+        <migrate-property name="serverUrl" default="${p:server.url}"/>
+      </migrate-properties>
+    </migrate-command>
+
+    <migrate-command name="Upload  Artifacts" />
+    <migrate-command name="Sync Artifacts" />
+  </migrate>
+  <migrate to-version="20">
+    <migrate-command name="Download Artifacts"/>
+    <migrate-command name="Verify Local Artifacts"/>
+    <migrate-command name="Upload Artifacts">
+      <migrate-properties>
+        <migrate-property name="versionId" default="${p:version.id}"/>
+        <migrate-property name="serverUrl" default="${p:server.url}"/>
+      </migrate-properties>
+    </migrate-command>
+    <migrate-command name="Sync Artifacts" />
+  </migrate>
+  <migrate to-version="21">
+    <migrate-command name="Download Artifacts"/>
+    <migrate-command name="Verify Local Artifacts"/>
+    <migrate-command name="Upload Artifacts" />
+    <migrate-command name="Sync Artifacts">
+      <migrate-properties>
+        <migrate-property name="versionId" default="${p:version.id}"/>
+      </migrate-properties>
+    </migrate-command>
+  </migrate>
+  <migrate to-version="22">
+    <migrate-command name="Download Artifacts"/>
+    <migrate-command name="Verify Local Artifacts"/>
+    <migrate-command name="Upload Artifacts" />
+    <migrate-command name="Sync Artifacts"/>
+    <migrate-command name="Download Artifacts for zOS"/>
+  </migrate>
+  <migrate to-version="23">
+    <migrate-command name="Download Artifacts"/>
+    <migrate-command name="Verify Local Artifacts"/>
+    <migrate-command name="Upload Artifacts" />
+    <migrate-command name="Sync Artifacts"/>
+    <migrate-command name="Download Artifacts for zOS"/>
+  </migrate>
+  <migrate to-version="24">
+    <migrate-command name="Download Artifacts"/>
+    <migrate-command name="Verify Local Artifacts"/>
+    <migrate-command name="Upload Artifacts" />
+    <migrate-command name="Sync Artifacts"/>
+    <migrate-command name="Download Artifacts for zOS">
+      <migrate-properties>
+        <migrate-property name="resourceId" default="${p:resource.id}"/>
+      </migrate-properties>
+    </migrate-command>
+  </migrate>
+  <migrate to-version="25">
+  <migrate-command name="Download Artifacts"/>
+    <migrate-command name="Verify Local Artifacts"/>
+    <migrate-command name="Upload Artifacts" />
+    <migrate-command name="Sync Artifacts"/>
+    <migrate-command name="Download Artifacts for zOS"/>
+  </migrate>
+  <migrate to-version="26">
+    <migrate-command name="Download Artifacts"/>
+    <migrate-command name="Verify Local Artifacts"/>
+    <migrate-command name="Upload Artifacts" />
+    <migrate-command name="Sync Artifacts"/>
+    <migrate-command name="Download Artifacts for zOS"/>
+  </migrate>
+  <migrate to-version="27">
+    <migrate-command name="Download Artifacts"/>
+    <migrate-command name="Verify Local Artifacts"/>
+    <migrate-command name="Upload Artifacts" />
+    <migrate-command name="Sync Artifacts"/>
+    <migrate-command name="Download Artifacts for zOS"/>
+  </migrate>
+  <migrate to-version="28">
+  </migrate>
+  <migrate to-version="29">
+  </migrate>
+  <migrate to-version="30">
+  </migrate>
+  <migrate to-version="31">
+  </migrate>
+  <migrate to-version="32">
+  </migrate>
+  <migrate to-version="33">
+    <migrate-command name="Download Artifacts">
+      <migrate-properties>
+        <migrate-property name="envId" default="${p:environment.id}" />
+        <migrate-property name="handleIncrementalVersions" default="false" />
+        <migrate-property name="versionType" default="${p:version.type}" />
+      </migrate-properties>
+    </migrate-command>
+  </migrate>
+  <migrate to-version="34">
+    <migrate-command name="Download Artifacts">
+      <migrate-properties>
+        <migrate-property name="maxMemory" default="1G" />
+      </migrate-properties>
+    </migrate-command>
+    <migrate-command name="Upload Artifacts">
+      <migrate-properties>
+        <migrate-property name="maxMemory" default="1G" />
+      </migrate-properties>
+    </migrate-command>
+    <migrate-command name="Verify Local Artifacts">
+      <migrate-properties>
+        <migrate-property name="maxMemory" default="1G" />
+      </migrate-properties>
+    </migrate-command>
+    <migrate-command name="Sync Artifacts">
+      <migrate-properties>
+        <migrate-property name="maxMemory" default="1G" />
+      </migrate-properties>
+    </migrate-command>
+    <migrate-command name="Download Artifacts for zOS">
+      <migrate-properties>
+        <migrate-property name="maxMemory" default="1G" />
+      </migrate-properties>
+    </migrate-command>
+  </migrate>
+  <migrate to-version="35">
+  </migrate>
+  <migrate to-version="36">
+  </migrate>
+  <migrate to-version="37">
+  </migrate>
+  <migrate to-version="38">
+  	<migrate-command name="Download Artifacts"/>
+    <migrate-command name="Verify Local Artifacts"/>
+    <migrate-command name="Upload Artifacts" />
+    <migrate-command name="Sync Artifacts"/>
+    <migrate-command name="Download Artifacts for zOS"/>
+    <migrate-command name="Compare version Artifacts for zOS"/>
+  </migrate>
+  <migrate to-version="39">
+  </migrate>
+  <migrate to-version="40">
+  </migrate>
+  <migrate to-version="41">
+  </migrate>
+  <migrate to-version="42"/>
+  <migrate to-version="43"/>
+</plugin-upgrade>

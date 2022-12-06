@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+- Licensed Materials - Property of IBM* and/or HCL**
+- UrbanCode Deploy
+- UrbanCode Build
+- UrbanCode Release
+- AnthillPro
+- (c) Copyright IBM Corporation 2011, 2017. All Rights Reserved.
+- (c) Copyright HCL Technologies Ltd. 2018. All Rights Reserved.
+-
+- U.S. Government Users Restricted Rights - Use, duplication or disclosure restricted by
+- GSA ADP Schedule Contract with IBM Corp.
+-
+- * Trademark of International Business Machines
+- ** Trademark of HCL Technologies Limited
+--><pluginInfo>
+  <!--
+
+  **author name IS required**
+
+  The Author Section is used to give credit to the author of the plugin.
+  Name is the only required element/attribute, but feel free to also include your email,
+  website  or bio to allow users of your plugin to praise your work, ask questions
+  or share their use case to help grow your plugin's functionality.
+  -->
+
+  <author name="UrbanCode">
+    <organization>UrbanCode</organization>
+    <email>info@urbancode.com</email>
+    <website>http://urbancode.com</website>
+    <bio/>
+  </author>
+
+  <!--
+
+  **intergration type IS Required**
+
+  The integration type section identifies where the plugin fits into the process
+  excepted types are SCM, Build, Artifact, Automation, Deploy
+
+  For example:
+
+  The plugin pulls Artifacts from an artifact repository during deployment
+  the Type would be "Artifact"
+  or
+  The plugin deploys to a middleware server
+  the Type would be "Deploy"
+  -->
+
+  <integration type="scm"/>
+
+
+  <!--
+  **source is NOT required**
+
+  The source section identifies the location of the plugin source code
+  For example
+  https://github.com/...
+  -->
+  <!--
+  <source url=""/>
+  -->
+  <!--
+  **license type is NOT required**
+
+  If your plugin uses any licensed software please acknowledge it by
+  listing the license type below
+  -->
+  <!--
+  <licenses>
+    <license type=""/>
+  </licenses>
+  -->
+  <!--
+  **tool-description IS required**
+
+  The tool-description section is used to summarize the software
+  the plugin was created to integrate with.
+
+  For example:
+  Apache Ant is a software tool to automate software processes during the build or
+  deployment of an application. Ant uses an propitiatory XML file to define build
+  and/or deployment steps(referred to as targets by ant) . The Ant executable is
+  called to execute the targets in the build.xml.
+  -->
+
+  <tool-description>UrbanCode Versioned File Storage client plugin for uploading and downloading artifacts.</tool-description>
+
+  <!--
+  **related-info is NOT required**
+
+  The releated-info section is used to define links which may be useful to users of the plugin
+  but don't fall into the release-notes or tool-description section.
+
+  For example: releated-info can be links to pdf documentation, help videos related to plugin setup or the product's
+  website.
+
+  excepted values for type include: PDF, WEBSITE, VIDEO
+  -->
+  <!--
+  <related-info>
+    <link title="" type="" description="" url =""/>
+  </related-info>
+  -->
+  <!--
+  **meta-html in NOT required**
+
+  The meta-html section is used define the meta description and the meta keywords of the plugin page.The meta
+  description tag allows you to influence the description of your page in the web crawlers that support the
+  tag The meta keywords tag allows   you to provide additional text for crawler-based search engines to index
+  along with your body copy.
+
+  If multiple keywords are used they must be comma(,) delimited
+  -->
+
+  <meta-html>
+    <meta content="" name="description"/>
+    <meta content="" name="keywords"/>
+  </meta-html>
+
+  <!-- Do not change the release-version, the build process injects it. -->
+  <release-version>43.1139365</release-version>
+
+
+  <release-notes>
+    <!--
+      **release-note IS required**
+
+      The plugin-version name must match the plugin version found in the plugin.xml file
+
+      The release-note should document the changes, improvements, or bug fixes introduced
+      with the new plugin version
+
+      The release-note may contain text or reference a file in the plugin zip package
+
+      For example your release note could be:
+      Support for was added for version 10.0 for software X
+      or
+      releaseNotes/release1.html (where release1.html contains html formatted version information)
+
+      To add a new release note add this with a description in it of the changes:
+      <release-note plugin-version="[6]">....</release-note>
+
+      Our automated release process will replace 'LATEST' with the released version.
+
+      If this already exists in the file, then the described changes have not been released yet and
+      you should just append to the existing 'LATEST' tag.
+      -->
+      <release-note plugin-version="27">
+          Enhanced Download Artifacts for zOS step to support HFS files.
+      </release-note>
+      <release-note plugin-version="26">
+          PI54866 - Logging no longer shows message for deleting a directory if that directory does not get deleted.
+      </release-note>
+
+      <release-note plugin-version="25">
+          Fixed APAR 140134 - Using Download Artifacts in Sync mode now maintains all necessary files.
+      </release-note>
+
+      <release-note plugin-version="24">
+          Fixed a problem in Download Artifacts for zOS step when running multiple downloads.
+      </release-note>
+
+      <release-note plugin-version="23">
+          Added minimal backward compatibility with pre-6.1.0.0 configurations to Download Artfiacts step.
+      </release-note>
+
+      <release-note plugin-version="22">
+          Added a Download Artifacts for zOS step to download zOS component artifacts from a VFS server.
+      </release-note>
+
+      <release-note plugin-version="21">
+PI32390 - Fixed sync step failing with error if resource has no inventory.
+      </release-note>
+
+      <release-note plugin-version="18">
+Added a sync step to check that local artifacts match what is expected to be on the agent based on inventory.
+      </release-note>
+
+      <release-note plugin-version="17">
+Updated upload and download steps to optionally convert files with specific file extensions.
+      </release-note>
+
+      <release-note plugin-version="16">
+Updated artifact download step to provide an artifact directory offset.
+      </release-note>
+
+      <release-note plugin-version="15">
+Updated artifact download step to work for agents with backslashes in their names. Fixed handling of directory offset.
+      </release-note>
+
+      <release-note plugin-version="14">
+Update sync mode to avoid hashing if files match date modified and size. Add option to clean working directory when using sync mode
+      </release-note>
+
+    <release-note plugin-version="10">
+Add optional caching support for the artifact download step.
+    </release-note>
+
+    <release-note plugin-version="9">
+Installing this plugin will give you access to the steps listed below. These steps can be used when designing a component process.
+    </release-note>
+    <release-note plugin-version="28">
+Support property file encryption.
+    </release-note>
+    <release-note plugin-version="29">
+APAR PI85953 - Fix infinite loop in Download Artifacts if the user did not have permissions to the working directory.
+    </release-note>
+    <release-note plugin-version="30">
+Plugin name updated.
+    </release-note>
+    <release-note plugin-version="31">
+APAR PI92703 - Add retry to artifact downloads after an IOException. The step will now fail after 5 attempts to download the artifact set.
+    </release-note>
+    <release-note plugin-version="32">
+Enhanced Download Artifacts for zOS step to extract files for new package format.
+    </release-note>
+    <release-note plugin-version="33">
+Enhanced Download Artifacts to support incremental versions in sync mode.
+    </release-note>
+    <release-note plugin-version="34">
+Port plugin from Groovy to Java.
+    </release-note>
+    <release-note plugin-version="35">
+Minor improvements in Download Artifacts for zOS step for new package format.
+    </release-note>
+    <release-note plugin-version="36">
+Use JAVA_OPTS environment variable to set options for the Java executable.
+    </release-note>
+    <release-note plugin-version="37">
+Fix a quoting issue in the Unix Java wrapper script that prevented correct execution when the agent is installed in path containing a space.
+    </release-note>
+    <release-note plugin-version="38">
+Added new step to compare two zOS version artifacts with new package format.
+    </release-note>
+    <release-note plugin-version="39">
+APAR PH42597 - Fixed a defect where in rare cases artifact downloads fail with the message "Premature end of chunk coded message body: closing chunk expected".
+To fully fix the issue, agent relays must also be patched or upgraded.
+    </release-note>
+    <release-note plugin-version="40">
+        Remove log4j functionality related to: CVE-2019-17571, CVE-2020-9488. CVE-2021-4104, CVE-2022-23302, CVE-2022-23305, CVE-2022-23307
+    </release-note>
+    <release-note plugin-version="41">
+      Update log4j 2.17 and uDeployRestClient libraries
+    </release-note>
+    <release-note plugin-version="42">
+      Update output logging configuration
+    </release-note>
+    <release-note plugin-version="43">
+      APAR PH48521 - Fixed a defect where a local IO error is reported incorrectly as an HTTP network error, such as: "MalformedChunkCodingException: CRLF expected at end of chunk" or "TruncatedChunkException: Truncated chunk".
+    </release-note>
+  </release-notes>
+</pluginInfo>
