@@ -1,1 +1,4 @@
-{@†‰“…@…•ƒ–„‰•‡@‚‰•@¦‰£ˆ@¢–”…@…§ƒ…—£‰–•¢\\@‚‰•™¨\\aK”„@©–¢`¦–™’‰•‡`£™……`…•ƒ–„‰•‡~‰‚”`ñğô÷@‡‰£`…•ƒ–„‰•‡~¤£†`ø@£…§£@Z„‰††K‡‰£££™‰‚¤£…¢@©–¢`¦–™’‰•‡`£™……`…•ƒ–„‰•‡~‰¢–øøõù`ñ@‡‰£`…•ƒ–„‰•‡~¤£†`ø@£…
+# file encoding bin with some exception
+** binary
+**/*.md zos-working-tree-encoding=ibm-1047 git-encoding=utf-8 text !diff
+.gitattributes zos-working-tree-encoding=iso8859-1 git-encoding=utf-8 text !diff
